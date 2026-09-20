@@ -1,11 +1,19 @@
 {
   "name": "coreui-kit",
   "private": true,
-  "version": "0.3.0",
+  "version": "0.4.0",
   "type": "module",
   "description": "A free, open-source copy-and-paste React + Tailwind CSS UI registry and showcase.",
   "author": "CoreUI-Kit contributors",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HSF237/CoreUI-Kit-v2.3.git"
+  },
+  "homepage": "https://core-ui-kit-livid.vercel.app/",
+  "bugs": {
+    "url": "https://github.com/HSF237/CoreUI-Kit-v2.3/issues"
+  },
   "scripts": {
     "dev": "vite",
     "prebuild": "node scripts/generate-sitemap.mjs",

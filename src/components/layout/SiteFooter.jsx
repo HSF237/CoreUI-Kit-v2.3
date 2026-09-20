@@ -17,7 +17,7 @@ export default function SiteFooter() {
             Contributing
           </Link>
           <a
-            href="https://github.com/HSF237/CoreUI-Kit"
+            href="https://github.com/HSF237/CoreUI-Kit-v2.3"
             target="_blank"
             rel="noreferrer"
             className="transition hover:text-[var(--chrome-text-secondary)]"

@@ -34,7 +34,7 @@ export default function SiteHeader({ onOpenSearch }) {
                   CoreUI-Kit
                 </p>
                 <span className="rounded-md border border-[var(--chrome-border)] bg-[var(--chrome-hover)] px-2 py-0.5 text-[9px] font-bold text-[var(--chrome-text-muted)]">
-                  v0.3
+                  v0.4
                 </span>
               </div>
               <p className="truncate text-[10px] text-[var(--chrome-text-muted)]">
@@ -85,12 +85,13 @@ export default function SiteHeader({ onOpenSearch }) {
           </button>
 
           <a
-            href="https://github.com/HSF237/CoreUI-Kit"
+            href="https://github.com/HSF237/CoreUI-Kit-v2.3"
             target="_blank"
             rel="noreferrer"
+            aria-label="GitHub"
             className="inline-flex h-9 items-center gap-2 rounded-xl border border-[var(--chrome-border)] bg-[var(--chrome-hover)] px-3 text-[11px] font-semibold text-[var(--chrome-text-secondary)] transition hover:bg-[var(--chrome-border)] hover:text-[var(--chrome-text-primary)]"
           >
-            <Github className="h-3.5 w-3.5" />
+            <Github className="h-3.5 w-3.5" aria-hidden="true" />
             <span className="hidden sm:inline">GitHub</span>
           </a>
 

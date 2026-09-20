@@ -1,12 +1,17 @@
 # CoreUI-Kit
 
+[![CI](https://github.com/HSF237/CoreUI-Kit-v2.3/actions/workflows/ci.yml/badge.svg)](https://github.com/HSF237/CoreUI-Kit-v2.3/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
+[![Version](https://img.shields.io/badge/version-0.4.0-informational.svg)](./CHANGELOG.md)
+
 **CoreUI-Kit is a free, open-source copy-and-paste UI registry for React and Tailwind CSS.**
 
 Browse polished production-minded interface blocks, preview them live, inspect the exact source file, and copy the code directly into your own product. No package to install, no runtime dependency on CoreUI-Kit — the code you copy is the code you own.
 
 **Live site:** https://core-ui-kit-livid.vercel.app/
+**Repository:** https://github.com/HSF237/CoreUI-Kit-v2.3
 
-## v0.3 — 35 production-ready blocks
+## v0.4 — 35 production-ready, accessible blocks
 
 CoreUI-Kit currently ships eight categories:
 
@@ -75,6 +80,7 @@ CoreUI-Kit currently ships eight categories:
 
 ## Why CoreUI-Kit?
 
+- Every block is a real, working component — keyboard-operable, screen-reader-labeled, with visible focus states — not a static mockup. See [CONTRIBUTING.md](./CONTRIBUTING.md#accessibility-conventions) for the bar every block is held to.
 - Live rendered previews with Preview / Code tabs for every block.
 - Every component has its own shareable page at `/components/:slug`.
 - Real, site-wide search — press **⌘K** or **/** anywhere to jump to a component or doc.
@@ -84,6 +90,8 @@ CoreUI-Kit currently ships eight categories:
 - Machine-readable `registry.json`, validated on every build.
 - SEO metadata, Open Graph image, and a generated sitemap.
 - React + Tailwind CSS, minimal dependency surface, MIT licensed.
+
+See [CHANGELOG.md](./CHANGELOG.md) for release history and [ROADMAP.md](./ROADMAP.md) for what's planned next.
 
 ## Architecture
 
@@ -162,8 +170,8 @@ This keeps the preview and copied source synchronized from one real component fi
 ### Clone
 
 ```bash
-git clone https://github.com/HSF237/CoreUI-Kit.git
-cd CoreUI-Kit
+git clone https://github.com/HSF237/CoreUI-Kit-v2.3.git
+cd CoreUI-Kit-v2.3
 ```
 
 ### Install
@@ -205,7 +213,7 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for the full guide. In short:
 
 ### Vercel
 
-The repository is connected to Vercel and production updates deploy from `main`.
+Production updates deploy from `main`.
 
 The included `vercel.json` uses:
 
@@ -219,7 +227,7 @@ The build automatically regenerates `public/sitemap.xml` from the current regist
 
 ### GitHub repository
 
-https://github.com/HSF237/CoreUI-Kit
+https://github.com/HSF237/CoreUI-Kit-v2.3
 
 ## Contributing
 

@@ -39,7 +39,7 @@ export const docsPages = [
       },
       {
         heading: "Clone and run",
-        code: "git clone https://github.com/HSF237/CoreUI-Kit.git\ncd CoreUI-Kit\nnpm install\nnpm run dev",
+        code: "git clone https://github.com/HSF237/CoreUI-Kit-v2.3.git\ncd CoreUI-Kit-v2.3\nnpm install\nnpm run dev",
       },
       {
         heading: "Using a single component in your own project",
@@ -143,6 +143,14 @@ export const docsPages = [
     title: "Changelog",
     summary: "Notable changes by version.",
     sections: [
+      {
+        heading: "v0.4.0",
+        list: [
+          "Every block is now a real, working component instead of a static mockup — keyboard navigation, ARIA roles/labels, focus-visible states, and prefers-reduced-motion support across all 35 blocks.",
+          "Fixed dead controls that looked interactive but weren't (carousel prev/next, FAQ accordion toggle).",
+          "Documented the accessibility bar every new block must meet in CONTRIBUTING.md.",
+        ],
+      },
       {
         heading: "v0.3.0",
         list: [

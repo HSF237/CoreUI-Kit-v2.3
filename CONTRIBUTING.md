@@ -52,7 +52,7 @@ If you're unsure what pattern applies, check the closest existing block in `src/
 
 ## Reporting issues
 
-Bug reports and feature requests are welcome on [GitHub Issues](https://github.com/HSF237/CoreUI-Kit/issues). For a bug, please include the component slug (if applicable), what you expected, and what actually happened — a screenshot helps a lot for visual bugs.
+Bug reports and feature requests are welcome on [GitHub Issues](https://github.com/HSF237/CoreUI-Kit-v2.3/issues). For a bug, please include the component slug (if applicable), what you expected, and what actually happened — a screenshot helps a lot for visual bugs.
 
 ## Code of conduct
 
