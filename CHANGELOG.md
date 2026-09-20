@@ -2,6 +2,11 @@
 
 All notable changes to this project are documented in this file. Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); this project uses [Semantic Versioning](https://semver.org/).
 
+## v0.5.0
+
+- Added three new blocks: Custom Checkbox Kit (Forms), Tabs Panel (Interactive), Stats Counter Section (Marketing) — 38 blocks total.
+- Added `CREDITS.md` documenting the open-source projects (Uiverse.io, HyperUI, Flowbite, daisyUI) whose patterns inspired these blocks — each re-implemented from scratch in our own conventions, not copied source.
+
 ## v0.4.0
 
 - Every block is now a real, working component instead of a static mockup — keyboard navigation, ARIA roles/labels, focus-visible states, and `prefers-reduced-motion` support across all 35 blocks.

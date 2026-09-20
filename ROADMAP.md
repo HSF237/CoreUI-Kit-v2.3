@@ -4,7 +4,7 @@ CoreUI-Kit is meant to grow into a full ecosystem — registry, docs, install CL
 
 ## Done
 
-- [x] 35 production-ready blocks across 8 categories.
+- [x] 38 production-ready blocks across 8 categories.
 - [x] Live preview + source viewer for every block, with one-click copy.
 - [x] Dedicated shareable page per component, site-wide search, light/dark theme.
 - [x] Registry validation, lint, and build wired into CI.

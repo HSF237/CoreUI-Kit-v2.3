@@ -1,6 +1,6 @@
 {
   "name": "coreui-kit",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "A free, open-source copy-and-paste React + Tailwind CSS UI registry.",
   "categories": ["fintech", "dashboard", "interactive", "buttons", "loaders", "forms", "overlays", "marketing"],
   "items": [
@@ -21,6 +21,7 @@
     {"name":"notification-center","category":"interactive","type":"registry:component","files":["src/components/registry/interactive/NotificationCenter.jsx"],"dependencies":["lucide-react"]},
     {"name":"pricing-tier-card","category":"interactive","type":"registry:component","files":["src/components/registry/interactive/PricingTierCard.jsx"],"dependencies":["lucide-react"]},
     {"name":"command-palette","category":"interactive","type":"registry:component","files":["src/components/registry/interactive/CommandPalette.jsx"],"dependencies":["lucide-react"]},
+    {"name":"tabs-panel","category":"interactive","type":"registry:component","files":["src/components/registry/interactive/TabsPanel.jsx"],"dependencies":["lucide-react"]},
 
     {"name":"magnetic-action-buttons","category":"buttons","type":"registry:component","files":["src/components/registry/buttons/MagneticActionButtons.jsx"],"dependencies":["lucide-react"]},
     {"name":"segmented-control","category":"buttons","type":"registry:component","files":["src/components/registry/buttons/SegmentedControl.jsx"],"dependencies":["lucide-react"]},
@@ -36,6 +37,7 @@
     {"name":"profile-settings-form","category":"forms","type":"registry:component","files":["src/components/registry/forms/ProfileSettingsForm.jsx"],"dependencies":["lucide-react"]},
     {"name":"search-filter-bar","category":"forms","type":"registry:component","files":["src/components/registry/forms/SearchFilterBar.jsx"],"dependencies":["lucide-react"]},
     {"name":"file-upload-dropzone","category":"forms","type":"registry:component","files":["src/components/registry/forms/FileUploadDropzone.jsx"],"dependencies":["lucide-react"]},
+    {"name":"custom-checkbox-kit","category":"forms","type":"registry:component","files":["src/components/registry/forms/CustomCheckboxKit.jsx"],"dependencies":["lucide-react"]},
 
     {"name":"glass-modal-dialog","category":"overlays","type":"registry:component","files":["src/components/registry/overlays/GlassModalDialog.jsx"],"dependencies":["lucide-react"]},
     {"name":"toast-notification-stack","category":"overlays","type":"registry:component","files":["src/components/registry/overlays/ToastNotificationStack.jsx"],"dependencies":["lucide-react"]},
@@ -45,6 +47,7 @@
     {"name":"testimonial-carousel","category":"marketing","type":"registry:component","files":["src/components/registry/marketing/TestimonialCarousel.jsx"],"dependencies":["lucide-react"]},
     {"name":"faq-accordion","category":"marketing","type":"registry:component","files":["src/components/registry/marketing/FaqAccordion.jsx"],"dependencies":["lucide-react"]},
     {"name":"logo-cloud","category":"marketing","type":"registry:component","files":["src/components/registry/marketing/LogoCloud.jsx"],"dependencies":[]},
-    {"name":"newsletter-cta-banner","category":"marketing","type":"registry:component","files":["src/components/registry/marketing/NewsletterCtaBanner.jsx"],"dependencies":["lucide-react"]}
+    {"name":"newsletter-cta-banner","category":"marketing","type":"registry:component","files":["src/components/registry/marketing/NewsletterCtaBanner.jsx"],"dependencies":["lucide-react"]},
+    {"name":"stats-counter-section","category":"marketing","type":"registry:component","files":["src/components/registry/marketing/StatsCounterSection.jsx"],"dependencies":["lucide-react"]}
   ]
 }

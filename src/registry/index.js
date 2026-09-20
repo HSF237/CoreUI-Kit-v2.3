@@ -31,6 +31,8 @@ import PricingTierCard from "../components/registry/interactive/PricingTierCard.
 import pricingTierSource from "../components/registry/interactive/PricingTierCard.jsx?raw";
 import CommandPalette from "../components/registry/interactive/CommandPalette.jsx";
 import commandPaletteSource from "../components/registry/interactive/CommandPalette.jsx?raw";
+import TabsPanel from "../components/registry/interactive/TabsPanel.jsx";
+import tabsPanelSource from "../components/registry/interactive/TabsPanel.jsx?raw";
 
 import MagneticActionButtons from "../components/registry/buttons/MagneticActionButtons.jsx";
 import magneticButtonsSource from "../components/registry/buttons/MagneticActionButtons.jsx?raw";
@@ -58,6 +60,8 @@ import SearchFilterBar from "../components/registry/forms/SearchFilterBar.jsx";
 import searchFilterSource from "../components/registry/forms/SearchFilterBar.jsx?raw";
 import FileUploadDropzone from "../components/registry/forms/FileUploadDropzone.jsx";
 import fileUploadSource from "../components/registry/forms/FileUploadDropzone.jsx?raw";
+import CustomCheckboxKit from "../components/registry/forms/CustomCheckboxKit.jsx";
+import customCheckboxSource from "../components/registry/forms/CustomCheckboxKit.jsx?raw";
 
 import GlassModalDialog from "../components/registry/overlays/GlassModalDialog.jsx";
 import glassModalSource from "../components/registry/overlays/GlassModalDialog.jsx?raw";
@@ -76,6 +80,8 @@ import LogoCloud from "../components/registry/marketing/LogoCloud.jsx";
 import logoCloudSource from "../components/registry/marketing/LogoCloud.jsx?raw";
 import NewsletterCtaBanner from "../components/registry/marketing/NewsletterCtaBanner.jsx";
 import newsletterCtaSource from "../components/registry/marketing/NewsletterCtaBanner.jsx?raw";
+import StatsCounterSection from "../components/registry/marketing/StatsCounterSection.jsx";
+import statsCounterSource from "../components/registry/marketing/StatsCounterSection.jsx?raw";
 
 import registryManifest from "../../registry.json";
 
@@ -112,6 +118,7 @@ const rawRegistryItems = [
   { slug:"notification-center", title:"Notification Center", description:"Compact notification inbox with unread states and action-ready rows.", category:"interactive", path:"src/components/registry/interactive/NotificationCenter.jsx", component:NotificationCenter, source:notificationCenterSource, tags:["Notifications","Inbox","Activity"] },
   { slug:"pricing-tier-card", title:"Pricing Tier Card", description:"Conversion-focused premium pricing block with benefits and gradient CTA.", category:"interactive", path:"src/components/registry/interactive/PricingTierCard.jsx", component:PricingTierCard, source:pricingTierSource, tags:["Pricing","SaaS","CTA"] },
   { slug:"command-palette", title:"Command Palette", description:"Keyboard-first quick action surface inspired by modern developer tools.", category:"interactive", path:"src/components/registry/interactive/CommandPalette.jsx", component:CommandPalette, source:commandPaletteSource, tags:["Command","Search","Productivity"] },
+  { slug:"tabs-panel", title:"Tabs Panel", description:"Accessible tabbed interface with roving tabindex and arrow-key navigation.", category:"interactive", path:"src/components/registry/interactive/TabsPanel.jsx", component:TabsPanel, source:tabsPanelSource, tags:["Tabs","Navigation","Accessible"] },
 
   { slug:"magnetic-action-buttons", title:"Premium Action Buttons", description:"Tactile primary, gradient, ghost and deployment actions.", category:"buttons", path:"src/components/registry/buttons/MagneticActionButtons.jsx", component:MagneticActionButtons, source:magneticButtonsSource, tags:["Buttons","CTA","Hover"] },
   { slug:"segmented-control", title:"Segmented Control", description:"Compact display-mode selector with strong active and inactive states.", category:"buttons", path:"src/components/registry/buttons/SegmentedControl.jsx", component:SegmentedControl, source:segmentedControlSource, tags:["Control","Tabs","Selection"] },
@@ -127,6 +134,7 @@ const rawRegistryItems = [
   { slug:"profile-settings-form", title:"Profile Settings Form", description:"Account settings form with avatar, identity and bio editing.", category:"forms", path:"src/components/registry/forms/ProfileSettingsForm.jsx", component:ProfileSettingsForm, source:profileSettingsSource, tags:["Settings","Profile","Form"] },
   { slug:"search-filter-bar", title:"Search & Filter Bar", description:"Advanced filtering surface for project and dataset browsing.", category:"forms", path:"src/components/registry/forms/SearchFilterBar.jsx", component:SearchFilterBar, source:searchFilterSource, tags:["Search","Filters","Input"] },
   { slug:"file-upload-dropzone", title:"File Upload Dropzone", description:"Drag-and-drop upload surface with uploaded-file states.", category:"forms", path:"src/components/registry/forms/FileUploadDropzone.jsx", component:FileUploadDropzone, source:fileUploadSource, tags:["Upload","Files","Form"] },
+  { slug:"custom-checkbox-kit", title:"Custom Checkbox Kit", description:"Accessible custom checkbox, radio and toggle switch styles with a visible focus ring.", category:"forms", path:"src/components/registry/forms/CustomCheckboxKit.jsx", component:CustomCheckboxKit, source:customCheckboxSource, tags:["Checkbox","Radio","Switch"] },
 
   { slug:"glass-modal-dialog", title:"Glass Modal Dialog", description:"Centered confirmation modal with glass backdrop and focus-friendly actions.", category:"overlays", path:"src/components/registry/overlays/GlassModalDialog.jsx", component:GlassModalDialog, source:glassModalSource, tags:["Modal","Dialog","Overlay"] },
   { slug:"toast-notification-stack", title:"Toast Notification Stack", description:"Stacked success, error and info toasts with auto-dismiss and manual close.", category:"overlays", path:"src/components/registry/overlays/ToastNotificationStack.jsx", component:ToastNotificationStack, source:toastStackSource, tags:["Toast","Alerts","Feedback"] },
@@ -137,6 +145,7 @@ const rawRegistryItems = [
   { slug:"faq-accordion", title:"FAQ Accordion", description:"Single-open accordion for landing page frequently asked questions.", category:"marketing", path:"src/components/registry/marketing/FaqAccordion.jsx", component:FaqAccordion, source:faqAccordionSource, tags:["FAQ","Accordion","Landing"] },
   { slug:"logo-cloud", title:"Logo Cloud", description:"'Trusted by' logo strip with responsive grid and hover emphasis.", category:"marketing", path:"src/components/registry/marketing/LogoCloud.jsx", component:LogoCloud, source:logoCloudSource, tags:["Social Proof","Logos","Marketing"] },
   { slug:"newsletter-cta-banner", title:"Newsletter CTA Banner", description:"Email capture banner with inline validation state and gradient surface.", category:"marketing", path:"src/components/registry/marketing/NewsletterCtaBanner.jsx", component:NewsletterCtaBanner, source:newsletterCtaSource, tags:["Newsletter","CTA","Form"] },
+  { slug:"stats-counter-section", title:"Stats Counter Section", description:"Animated count-up stat grid that triggers once scrolled into view.", category:"marketing", path:"src/components/registry/marketing/StatsCounterSection.jsx", component:StatsCounterSection, source:statsCounterSource, tags:["Stats","Social Proof","Animation"] },
 ];
 
 export const registryItems = rawRegistryItems.map((item) => ({

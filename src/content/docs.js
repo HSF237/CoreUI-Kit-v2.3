@@ -144,6 +144,13 @@ export const docsPages = [
     summary: "Notable changes by version.",
     sections: [
       {
+        heading: "v0.5.0",
+        list: [
+          "Added Custom Checkbox Kit (Forms), Tabs Panel (Interactive), and Stats Counter Section (Marketing) — 38 blocks total.",
+          "See CREDITS.md for the open-source projects that inspired these patterns.",
+        ],
+      },
+      {
         heading: "v0.4.0",
         list: [
           "Every block is now a real, working component instead of a static mockup — keyboard navigation, ARIA roles/labels, focus-visible states, and prefers-reduced-motion support across all 35 blocks.",

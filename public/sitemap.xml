@@ -52,6 +52,9 @@
     <loc>https://core-ui-kit-livid.vercel.app/components/command-palette</loc>
   </url>
   <url>
+    <loc>https://core-ui-kit-livid.vercel.app/components/tabs-panel</loc>
+  </url>
+  <url>
     <loc>https://core-ui-kit-livid.vercel.app/components/magnetic-action-buttons</loc>
   </url>
   <url>
@@ -88,6 +91,9 @@
     <loc>https://core-ui-kit-livid.vercel.app/components/file-upload-dropzone</loc>
   </url>
   <url>
+    <loc>https://core-ui-kit-livid.vercel.app/components/custom-checkbox-kit</loc>
+  </url>
+  <url>
     <loc>https://core-ui-kit-livid.vercel.app/components/glass-modal-dialog</loc>
   </url>
   <url>
@@ -110,6 +116,9 @@
   </url>
   <url>
     <loc>https://core-ui-kit-livid.vercel.app/components/newsletter-cta-banner</loc>
+  </url>
+  <url>
+    <loc>https://core-ui-kit-livid.vercel.app/components/stats-counter-section</loc>
   </url>
   <url>
     <loc>https://core-ui-kit-livid.vercel.app/docs/introduction</loc>

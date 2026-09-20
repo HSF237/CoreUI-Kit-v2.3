@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/HSF237/CoreUI-Kit-v2.3/actions/workflows/ci.yml/badge.svg)](https://github.com/HSF237/CoreUI-Kit-v2.3/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
-[![Version](https://img.shields.io/badge/version-0.4.0-informational.svg)](./CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.5.0-informational.svg)](./CHANGELOG.md)
 
 **CoreUI-Kit is a free, open-source copy-and-paste UI registry for React and Tailwind CSS.**
 
@@ -11,7 +11,7 @@ Browse polished production-minded interface blocks, preview them live, inspect t
 **Live site:** https://core-ui-kit-livid.vercel.app/
 **Repository:** https://github.com/HSF237/CoreUI-Kit-v2.3
 
-## v0.4 — 35 production-ready, accessible blocks
+## v0.5 — 38 production-ready, accessible blocks
 
 CoreUI-Kit currently ships eight categories:
 
@@ -19,13 +19,13 @@ CoreUI-Kit currently ships eight categories:
 | --- | ---: |
 | Fintech Blocks | 5 |
 | Dashboards | 5 |
-| Interactive Sections | 5 |
+| Interactive Sections | 6 |
 | Buttons & Actions | 4 |
 | Loaders & Progress | 4 |
-| Forms & Inputs | 4 |
+| Forms & Inputs | 5 |
 | Overlays & Feedback | 4 |
-| Marketing Sections | 4 |
-| **Total** | **35** |
+| Marketing Sections | 5 |
+| **Total** | **38** |
 
 ### Fintech Blocks
 - Transaction & Exchange Overview
@@ -47,6 +47,7 @@ CoreUI-Kit currently ships eight categories:
 - Notification Center
 - Pricing Tier Card
 - Command Palette
+- Tabs Panel
 
 ### Buttons & Actions
 - Premium Action Buttons
@@ -65,6 +66,7 @@ CoreUI-Kit currently ships eight categories:
 - Profile Settings Form
 - Search & Filter Bar
 - File Upload Dropzone
+- Custom Checkbox Kit
 
 ### Overlays & Feedback
 - Glass Modal Dialog
@@ -77,6 +79,7 @@ CoreUI-Kit currently ships eight categories:
 - FAQ Accordion
 - Logo Cloud
 - Newsletter CTA Banner
+- Stats Counter Section
 
 ## Why CoreUI-Kit?
 
@@ -91,7 +94,7 @@ CoreUI-Kit currently ships eight categories:
 - SEO metadata, Open Graph image, and a generated sitemap.
 - React + Tailwind CSS, minimal dependency surface, MIT licensed.
 
-See [CHANGELOG.md](./CHANGELOG.md) for release history and [ROADMAP.md](./ROADMAP.md) for what's planned next.
+See [CHANGELOG.md](./CHANGELOG.md) for release history, [ROADMAP.md](./ROADMAP.md) for what's planned next, and [CREDITS.md](./CREDITS.md) for the open-source patterns that inspired a few blocks.
 
 ## Architecture
 
