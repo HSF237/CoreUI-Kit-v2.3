@@ -1,0 +1,50 @@
+{
+  "name": "coreui-kit",
+  "version": "0.3.0",
+  "description": "A free, open-source copy-and-paste React + Tailwind CSS UI registry.",
+  "categories": ["fintech", "dashboard", "interactive", "buttons", "loaders", "forms", "overlays", "marketing"],
+  "items": [
+    {"name":"transaction-exchange-overview","category":"fintech","type":"registry:component","files":["src/components/registry/fintech/TransactionExchangeOverview.jsx"],"dependencies":["lucide-react"]},
+    {"name":"premium-wallet-card","category":"fintech","type":"registry:component","files":["src/components/registry/fintech/PremiumWalletCard.jsx"],"dependencies":["lucide-react"]},
+    {"name":"payment-method-stack","category":"fintech","type":"registry:component","files":["src/components/registry/fintech/PaymentMethodStack.jsx"],"dependencies":["lucide-react"]},
+    {"name":"revenue-metric-card","category":"fintech","type":"registry:component","files":["src/components/registry/fintech/RevenueMetricCard.jsx"],"dependencies":["lucide-react"]},
+    {"name":"invoice-status-panel","category":"fintech","type":"registry:component","files":["src/components/registry/fintech/InvoiceStatusPanel.jsx"],"dependencies":["lucide-react"]},
+
+    {"name":"responsive-sidebar-navigation","category":"dashboard","type":"registry:component","files":["src/components/registry/dashboard/ResponsiveSidebarNavigation.jsx"],"dependencies":["react","lucide-react"]},
+    {"name":"analytics-command-center","category":"dashboard","type":"registry:component","files":["src/components/registry/dashboard/AnalyticsCommandCenter.jsx"],"dependencies":["lucide-react"]},
+    {"name":"activity-timeline","category":"dashboard","type":"registry:component","files":["src/components/registry/dashboard/ActivityTimeline.jsx"],"dependencies":["lucide-react"]},
+    {"name":"data-table-pro","category":"dashboard","type":"registry:component","files":["src/components/registry/dashboard/DataTablePro.jsx"],"dependencies":["lucide-react"]},
+    {"name":"system-health-panel","category":"dashboard","type":"registry:component","files":["src/components/registry/dashboard/SystemHealthPanel.jsx"],"dependencies":["lucide-react"]},
+
+    {"name":"upcoming-features-card","category":"interactive","type":"registry:component","files":["src/components/registry/interactive/UpcomingFeaturesCard.jsx"],"dependencies":["lucide-react"]},
+    {"name":"bento-feature-grid","category":"interactive","type":"registry:component","files":["src/components/registry/interactive/BentoFeatureGrid.jsx"],"dependencies":["lucide-react"]},
+    {"name":"notification-center","category":"interactive","type":"registry:component","files":["src/components/registry/interactive/NotificationCenter.jsx"],"dependencies":["lucide-react"]},
+    {"name":"pricing-tier-card","category":"interactive","type":"registry:component","files":["src/components/registry/interactive/PricingTierCard.jsx"],"dependencies":["lucide-react"]},
+    {"name":"command-palette","category":"interactive","type":"registry:component","files":["src/components/registry/interactive/CommandPalette.jsx"],"dependencies":["lucide-react"]},
+
+    {"name":"magnetic-action-buttons","category":"buttons","type":"registry:component","files":["src/components/registry/buttons/MagneticActionButtons.jsx"],"dependencies":["lucide-react"]},
+    {"name":"segmented-control","category":"buttons","type":"registry:component","files":["src/components/registry/buttons/SegmentedControl.jsx"],"dependencies":["lucide-react"]},
+    {"name":"gradient-icon-buttons","category":"buttons","type":"registry:component","files":["src/components/registry/buttons/GradientIconButtons.jsx"],"dependencies":["lucide-react"]},
+    {"name":"floating-action-dock","category":"buttons","type":"registry:component","files":["src/components/registry/buttons/FloatingActionDock.jsx"],"dependencies":["lucide-react"]},
+
+    {"name":"loading-status-panel","category":"loaders","type":"registry:component","files":["src/components/registry/loaders/LoadingStatusPanel.jsx"],"dependencies":["lucide-react"]},
+    {"name":"multi-step-progress","category":"loaders","type":"registry:component","files":["src/components/registry/loaders/MultiStepProgress.jsx"],"dependencies":["lucide-react"]},
+    {"name":"circular-progress-stats","category":"loaders","type":"registry:component","files":["src/components/registry/loaders/CircularProgressStats.jsx"],"dependencies":[]},
+    {"name":"skeleton-dashboard","category":"loaders","type":"registry:component","files":["src/components/registry/loaders/SkeletonDashboard.jsx"],"dependencies":[]},
+
+    {"name":"smart-login-panel","category":"forms","type":"registry:component","files":["src/components/registry/forms/SmartLoginPanel.jsx"],"dependencies":["lucide-react"]},
+    {"name":"profile-settings-form","category":"forms","type":"registry:component","files":["src/components/registry/forms/ProfileSettingsForm.jsx"],"dependencies":["lucide-react"]},
+    {"name":"search-filter-bar","category":"forms","type":"registry:component","files":["src/components/registry/forms/SearchFilterBar.jsx"],"dependencies":["lucide-react"]},
+    {"name":"file-upload-dropzone","category":"forms","type":"registry:component","files":["src/components/registry/forms/FileUploadDropzone.jsx"],"dependencies":["lucide-react"]},
+
+    {"name":"glass-modal-dialog","category":"overlays","type":"registry:component","files":["src/components/registry/overlays/GlassModalDialog.jsx"],"dependencies":["lucide-react"]},
+    {"name":"toast-notification-stack","category":"overlays","type":"registry:component","files":["src/components/registry/overlays/ToastNotificationStack.jsx"],"dependencies":["lucide-react"]},
+    {"name":"tooltip-popover-kit","category":"overlays","type":"registry:component","files":["src/components/registry/overlays/TooltipPopoverKit.jsx"],"dependencies":["lucide-react"]},
+    {"name":"confirm-delete-dialog","category":"overlays","type":"registry:component","files":["src/components/registry/overlays/ConfirmDeleteDialog.jsx"],"dependencies":["lucide-react"]},
+
+    {"name":"testimonial-carousel","category":"marketing","type":"registry:component","files":["src/components/registry/marketing/TestimonialCarousel.jsx"],"dependencies":["lucide-react"]},
+    {"name":"faq-accordion","category":"marketing","type":"registry:component","files":["src/components/registry/marketing/FaqAccordion.jsx"],"dependencies":["lucide-react"]},
+    {"name":"logo-cloud","category":"marketing","type":"registry:component","files":["src/components/registry/marketing/LogoCloud.jsx"],"dependencies":[]},
+    {"name":"newsletter-cta-banner","category":"marketing","type":"registry:component","files":["src/components/registry/marketing/NewsletterCtaBanner.jsx"],"dependencies":["lucide-react"]}
+  ]
+}

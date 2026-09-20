@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --surface: #0b0b0d;
+  --surface-raised: #101014;
+  --line: rgba(255,255,255,.075);
+
+  /* Theme-aware site chrome tokens. Component preview canvases and code
+     panes intentionally stay dark regardless of theme — these tokens only
+     drive the surrounding site shell (header, nav, hero, cards, docs). */
+  --chrome-bg-a: rgba(244,114,182,.035);
+  --chrome-bg-b: rgba(52,211,153,.035);
+  --chrome-bg-from: #09090b;
+  --chrome-bg-to: #070709;
+  --chrome-surface: #0c0c0f;
+  --chrome-surface-raised: #101014;
+  --chrome-surface-sunken: #09090b;
+  --chrome-border: rgba(255,255,255,.07);
+  --chrome-border-soft: rgba(255,255,255,.06);
+  --chrome-border-strong: rgba(255,255,255,.12);
+  --chrome-text-primary: #fafafa;
+  --chrome-text-secondary: #a1a1aa;
+  --chrome-text-muted: #71717a;
+  --chrome-text-faint: #52525b;
+  --chrome-hover: rgba(255,255,255,.045);
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+  --chrome-bg-a: rgba(244,114,182,.05);
+  --chrome-bg-b: rgba(16,185,129,.05);
+  --chrome-bg-from: #fafafa;
+  --chrome-bg-to: #f1f1f3;
+  --chrome-surface: #ffffff;
+  --chrome-surface-raised: #f7f7f8;
+  --chrome-surface-sunken: #f2f2f4;
+  --chrome-border: rgba(9,9,11,.09);
+  --chrome-border-soft: rgba(9,9,11,.07);
+  --chrome-border-strong: rgba(9,9,11,.16);
+  --chrome-text-primary: #0a0a0b;
+  --chrome-text-secondary: #52525b;
+  --chrome-text-muted: #71717a;
+  --chrome-text-faint: #a1a1aa;
+  --chrome-hover: rgba(9,9,11,.045);
+}
+
+* { box-sizing: border-box; }
+
+html {
+  min-width: 320px;
+  scroll-behavior: smooth;
+  background: var(--chrome-bg-from);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  color: var(--chrome-text-secondary);
+  background:
+    radial-gradient(circle at 14% 0%, var(--chrome-bg-a), transparent 24rem),
+    radial-gradient(circle at 86% 3%, var(--chrome-bg-b), transparent 26rem),
+    linear-gradient(180deg, var(--chrome-bg-from) 0%, var(--chrome-bg-to) 100%);
+  transition: background-color .2s ease, color .2s ease;
+}
+
+button, input, textarea { font: inherit; }
+button { cursor: pointer; }
+
+::selection {
+  background: rgba(255,255,255,.16);
+  color: white;
+}
+
+.preview-grid {
+  background-image:
+    linear-gradient(rgba(255,255,255,.022) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.022) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.preview-fintech {
+  background:
+    radial-gradient(circle at 12% 12%, rgba(52,211,153,.07), transparent 23rem),
+    radial-gradient(circle at 88% 88%, rgba(56,189,248,.045), transparent 22rem),
+    #090c0c;
+}
+
+.preview-dashboard {
+  background:
+    radial-gradient(circle at 14% 10%, rgba(96,165,250,.065), transparent 23rem),
+    radial-gradient(circle at 88% 86%, rgba(129,140,248,.05), transparent 22rem),
+    #090b10;
+}
+
+.preview-interactive {
+  background:
+    radial-gradient(circle at 12% 10%, rgba(251,191,36,.055), transparent 22rem),
+    radial-gradient(circle at 88% 88%, rgba(244,114,182,.055), transparent 23rem),
+    #0d0a0b;
+}
+
+.preview-buttons {
+  background:
+    radial-gradient(circle at 10% 15%, rgba(251,113,133,.05), transparent 20rem),
+    radial-gradient(circle at 90% 82%, rgba(251,146,60,.05), transparent 20rem),
+    #0d0a0a;
+}
+
+.preview-loaders {
+  background:
+    radial-gradient(circle at 12% 10%, rgba(250,204,21,.045), transparent 20rem),
+    radial-gradient(circle at 88% 88%, rgba(74,222,128,.045), transparent 21rem),
+    #0b0c0a;
+}
+
+.preview-forms {
+  background:
+    radial-gradient(circle at 12% 10%, rgba(125,211,252,.045), transparent 21rem),
+    radial-gradient(circle at 88% 88%, rgba(148,163,184,.04), transparent 20rem),
+    #0a0b0d;
+}
+
+.code-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(113,113,122,.55) transparent;
+}

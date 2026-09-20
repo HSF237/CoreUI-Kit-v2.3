@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://core-ui-kit-livid.vercel.app/sitemap.xml
