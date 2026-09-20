@@ -20,6 +20,22 @@ Every block in the registry follows the same rules:
 - Styling is Tailwind CSS utility classes — no CSS-in-JS, no separate stylesheet per component.
 - Default export a single component whose name matches the file name.
 
+## Accessibility conventions
+
+A block that only looks like a button, dialog, or menu is not accepted — every block in the registry must actually work with a keyboard and a screen reader, not just a mouse. Concretely:
+
+- Every `<button>` gets an explicit `type` (`"button"` unless it submits a form).
+- Icon-only buttons get `aria-label`; decorative icons (anything next to visible text, or purely ornamental) get `aria-hidden="true"`.
+- Interactive elements need a visible focus state — add `focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2` (pick an outline color that fits the block's palette).
+- Dialogs and confirm modals use `role="dialog"`/`role="alertdialog"` with `aria-modal`, `aria-labelledby`/`aria-describedby`, trap Tab focus inside while open, close on `Escape`, and restore focus to the trigger on close.
+- Menus/popovers use `role="menu"`/`"menuitem"` (or `"listbox"`/`"option"` for single-select pickers) with arrow-key navigation, `Escape` to close, and click-outside to close.
+- Progress indicators and gauges use `role="progressbar"` with `aria-valuenow`/`aria-valuemin`/`aria-valuemax`.
+- Toggling a boolean state (like/favorite/segmented control) uses `aria-pressed` or `aria-checked`, not just a color change.
+- Looping animations (spinners, skeleton pulses) add `motion-reduce:animate-none` so `prefers-reduced-motion` users don't get a stuck-looking but endlessly animating element.
+- A component demoing a real interaction (a modal, a dropdown, a carousel) should actually perform that interaction on click/keypress — a trigger that renders a static "open" state with dead buttons is a bug, not a simplification.
+
+If you're unsure what pattern applies, check the closest existing block in `src/components/registry/overlays/` or `src/components/registry/dashboard/DataTablePro.jsx` for a worked example.
+
 ## Adding a new component
 
 1. Add the component file under `src/components/registry/<category>/`. Create a new category folder if it genuinely doesn't fit an existing one.
