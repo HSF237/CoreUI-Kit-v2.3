@@ -2,6 +2,17 @@
 
 All notable changes to this project are documented in this file. Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); this project uses [Semantic Versioning](https://semver.org/).
 
+## v0.7.0
+
+- Added a real test suite: Vitest + React Testing Library + jest-axe, wired into `npm run check` and CI. 53 tests: an automated axe accessibility scan across all 38 registry components, plus behavior regression tests for the trickiest interactive blocks (modal focus trap/Escape/focus-return, tabs keyboard navigation, carousel/accordion state). The suite caught two real accessibility bugs on its first run — see Fixed below.
+- Fixed the production site returning a 404 on any route besides `/` (e.g. `/docs`, `/components/tabs-panel`) — `vercel.json` had no SPA fallback rewrite, so a direct link or refresh on a client-side route hit Vercel's static file server instead of `index.html`.
+- Consolidated the canonical domain to `https://core-ui-kit-v2-3.vercel.app` across `README.md`, `index.html` (canonical/OG/Twitter tags), `package.json` (`homepage`), `public/robots.txt`, and `scripts/generate-sitemap.mjs` — these had been left pointing at an old domain from a previous project iteration.
+
+### Fixed
+
+- `UpcomingFeaturesCard`: progress bar `id`/`aria-labelledby` was built from a feature title containing spaces (e.g. `"Automation Studio-progress-label"`), which `aria-labelledby` parses as multiple space-separated ID references — none of which existed, breaking the accessible name entirely. IDs are now slugified.
+- `FileUploadDropzone`: the visually-hidden native `<input type="file">` had no accessible name.
+
 ## v0.6.0
 
 - Retrofitted all 38 components: structural colors (surface backgrounds, borders, body text) now use CSS variables with a fallback equal to the original color — e.g. `bg-[var(--surface,#0d0d10)]` — instead of hardcoded Tailwind utilities. Zero visual change by default; consumers can now re-theme every copied component at once by defining `--surface`, `--border`, `--text-primary`, etc. in their own global CSS.

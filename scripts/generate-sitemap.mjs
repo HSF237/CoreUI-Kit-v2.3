@@ -4,7 +4,7 @@ import path from "node:path";
 import { docsPages } from "../src/content/docs.js";
 
 const rootDir = path.dirname(fileURLToPath(new URL("../package.json", import.meta.url)));
-const siteUrl = "https://core-ui-kit-livid.vercel.app";
+const siteUrl = "https://core-ui-kit-v2-3.vercel.app";
 
 const registry = JSON.parse(readFileSync(path.join(rootDir, "registry.json"), "utf8"));
 

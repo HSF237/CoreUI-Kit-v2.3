@@ -63,12 +63,12 @@ export default function UpcomingFeaturesCard(){
 
                   <div className="mt-5">
                     <div className="flex items-center justify-between text-[9px] text-[var(--text-faint,#334155)]">
-                      <span id={`${feature.title}-progress-label`}>Progress</span>
+                      <span id={`${feature.title.replace(/\s+/g, "-")}-progress-label`}>Progress</span>
                       <span className="font-mono">{feature.progress}%</span>
                     </div>
                     <div
                       role="progressbar"
-                      aria-labelledby={`${feature.title}-progress-label`}
+                      aria-labelledby={`${feature.title.replace(/\s+/g, "-")}-progress-label`}
                       aria-valuenow={feature.progress}
                       aria-valuemin={0}
                       aria-valuemax={100}

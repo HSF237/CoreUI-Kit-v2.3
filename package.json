@@ -1,7 +1,7 @@
 {
   "name": "coreui-kit",
   "private": true,
-  "version": "0.6.0",
+  "version": "0.7.0",
   "type": "module",
   "description": "A free, open-source copy-and-paste React + Tailwind CSS UI registry and showcase.",
   "author": "CoreUI-Kit contributors",
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "https://github.com/HSF237/CoreUI-Kit-v2.3.git"
   },
-  "homepage": "https://core-ui-kit-livid.vercel.app/",
+  "homepage": "https://core-ui-kit-v2-3.vercel.app/",
   "bugs": {
     "url": "https://github.com/HSF237/CoreUI-Kit-v2.3/issues"
   },
@@ -22,7 +22,9 @@
     "lint": "eslint .",
     "sitemap": "node scripts/generate-sitemap.mjs",
     "registry:validate": "node scripts/validate-registry.mjs",
-    "check": "npm run registry:validate && npm run lint && npm run build"
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "check": "npm run registry:validate && npm run lint && npm run test && npm run build"
   },
   "dependencies": {
     "lucide-react": "^0.468.0",
@@ -33,13 +35,19 @@
   "devDependencies": {
     "@eslint/js": "^9.17.0",
     "@tailwindcss/vite": "^4.0.0",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.7",
     "@vitejs/plugin-react": "^4.3.4",
     "eslint": "^9.17.0",
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-react-refresh": "^0.4.16",
     "globals": "^15.14.0",
+    "jest-axe": "^11.0.0",
+    "jsdom": "^29.1.1",
     "tailwindcss": "^4.0.0",
-    "vite": "^6.0.0"
+    "vite": "^6.0.0",
+    "vitest": "^4.1.11"
   },
   "engines": {
     "node": ">=20.0.0"

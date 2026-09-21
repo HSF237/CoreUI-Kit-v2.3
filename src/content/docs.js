@@ -152,6 +152,14 @@ export const docsPages = [
     summary: "Notable changes by version.",
     sections: [
       {
+        heading: "v0.7.0",
+        list: [
+          "Added a real test suite (Vitest + React Testing Library + jest-axe): an automated accessibility scan across all 38 blocks plus behavior regression tests for the trickiest interactive ones, wired into CI.",
+          "Fixed a production 404 on any route besides / (e.g. /docs) — vercel.json now has an SPA fallback rewrite.",
+          "Consolidated the canonical domain across the whole repo.",
+        ],
+      },
+      {
         heading: "v0.6.0",
         list: [
           "Structural colors across all 38 blocks now use CSS variables with a fallback (e.g. bg-[var(--surface,#0d0d10)]) instead of hardcoded utilities — re-theme every copied component at once. See the Theming page for the token reference.",

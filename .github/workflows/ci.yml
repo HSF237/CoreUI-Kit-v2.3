@@ -22,5 +22,5 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm install --no-audit --no-fund
-      - name: Validate registry, lint, and build
+      - name: Validate registry, lint, test, and build
         run: npm run check

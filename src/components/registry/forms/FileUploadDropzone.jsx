@@ -73,6 +73,7 @@ export default function FileUploadDropzone() {
         ref={inputRef}
         type="file"
         multiple
+        aria-label="Choose files to upload"
         accept=".png,.jpg,.jpeg,.svg,.pdf"
         className="sr-only"
         onChange={(event) => {

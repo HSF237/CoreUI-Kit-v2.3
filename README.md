@@ -2,16 +2,16 @@
 
 [![CI](https://github.com/HSF237/CoreUI-Kit-v2.3/actions/workflows/ci.yml/badge.svg)](https://github.com/HSF237/CoreUI-Kit-v2.3/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
-[![Version](https://img.shields.io/badge/version-0.6.0-informational.svg)](./CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.7.0-informational.svg)](./CHANGELOG.md)
 
 **CoreUI-Kit is a free, open-source copy-and-paste UI registry for React and Tailwind CSS.**
 
 Browse polished production-minded interface blocks, preview them live, inspect the exact source file, and copy the code directly into your own product. No package to install, no runtime dependency on CoreUI-Kit — the code you copy is the code you own.
 
-**Live site:** https://core-ui-kit-livid.vercel.app/
+**Live site:** https://core-ui-kit-v2-3.vercel.app/
 **Repository:** https://github.com/HSF237/CoreUI-Kit-v2.3
 
-## v0.6 — 38 production-ready, accessible, themeable blocks
+## v0.7 — 38 production-ready, accessible, themeable, tested blocks
 
 CoreUI-Kit currently ships eight categories:
 
@@ -84,7 +84,7 @@ CoreUI-Kit currently ships eight categories:
 ## Why CoreUI-Kit?
 
 - Every block is a real, working component — keyboard-operable, screen-reader-labeled, with visible focus states — not a static mockup. See [CONTRIBUTING.md](./CONTRIBUTING.md#accessibility-conventions) for the bar every block is held to.
-- Structural colors ship as CSS variables with sensible fallbacks — re-theme every copied block at once by overriding a handful of tokens, no per-file editing required. See the [Theming docs](https://core-ui-kit-livid.vercel.app/docs/theming).
+- Structural colors ship as CSS variables with sensible fallbacks — re-theme every copied block at once by overriding a handful of tokens, no per-file editing required. See the [Theming docs](https://core-ui-kit-v2-3.vercel.app/docs/theming).
 - Live rendered previews with Preview / Code tabs for every block.
 - Every component has its own shareable page at `/components/:slug`.
 - Real, site-wide search — press **⌘K** or **/** anywhere to jump to a component or doc.
@@ -201,7 +201,7 @@ npm run preview
 
 You don't need to clone the whole repository. Open the component on its detail page (`/components/<slug>`), switch to the **Code** tab, and copy it into your project. Make sure Tailwind CSS is already set up, and install `lucide-react` if the component uses icons.
 
-See the [Docs](https://core-ui-kit-livid.vercel.app/docs) for the full installation and theming guide.
+See the [Docs](https://core-ui-kit-v2-3.vercel.app/docs) for the full installation and theming guide.
 
 ## Adding a component
 

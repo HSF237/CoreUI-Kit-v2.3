@@ -11,10 +11,11 @@ CoreUI-Kit is meant to grow into a full ecosystem — registry, docs, install CL
 - [x] Every block is a real, accessible, keyboard-operable component (v0.4.0) — not a static mockup.
 - [x] `CONTRIBUTING.md`, issue/PR templates, `SECURITY.md`, `CHANGELOG.md`.
 - [x] **Component-level design tokens** (v0.6.0). Surface/border/text colors ship as CSS variables with a fallback; a consumer's theme can now reach into copied components by overriding those variables. Category accent colors stay per-component by design.
+- [x] **Testing infrastructure** (v0.7.0). Vitest + React Testing Library + jest-axe, wired into `npm run check` and CI: an automated a11y scan across all 38 components plus behavior regression tests for the trickiest interactive ones. Caught two real accessibility bugs on its first run.
+- [x] **Production deployment fixes** (v0.7.0). Added an SPA fallback rewrite to `vercel.json` (client-side routes 404'd on direct load/refresh) and consolidated the canonical domain repo-wide.
 
 ## In progress / next up
 
-- [ ] **Testing infrastructure.** No automated tests exist yet. Add Vitest + React Testing Library for behavior (focus trap, keyboard nav, form state) and `axe-core` for automated a11y regression checks, wired into CI alongside the existing lint/build/validate step.
 - [ ] **Install CLI.** Move beyond copy-paste-only: a `npx coreui-kit add <component>` command that fetches a component's source and dependencies directly into a consumer's project, following the `registry.json` schema already in place.
 - [ ] **Richer `registry.json` metadata.** Add per-component `props`, `variants`, and `a11yNotes` fields so the docs page can surface the full spec the project's vision calls for (props table, variants, accessibility notes), not just name/category/files/dependencies.
 - [ ] **Bundle size.** Production JS is a single ~650KB chunk and growing with every component. Route-based code-splitting (`React.lazy` per page) would cut initial load meaningfully.
