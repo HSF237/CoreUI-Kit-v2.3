@@ -1,6 +1,6 @@
 {
   "name": "coreui-kit",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "description": "A free, open-source copy-and-paste React + Tailwind CSS UI registry.",
   "categories": ["fintech", "dashboard", "interactive", "buttons", "loaders", "forms", "overlays", "marketing"],
   "items": [

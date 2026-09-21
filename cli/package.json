@@ -1,6 +1,6 @@
 {
   "name": "coreui-kit",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "CLI to copy CoreUI-Kit React components straight into your project.",
   "type": "module",
   "license": "MIT",
@@ -20,6 +20,9 @@
   "files": [
     "coreui-kit.mjs"
   ],
+  "dependencies": {
+    "cross-spawn": "^7.0.6"
+  },
   "engines": {
     "node": ">=18.0.0"
   },

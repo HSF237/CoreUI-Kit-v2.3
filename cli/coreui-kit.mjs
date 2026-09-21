@@ -1,10 +1,12 @@
 #!/usr/bin/env node
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
 import path from "node:path";
-import { execSync } from "node:child_process";
+import spawn from "cross-spawn";
 
-const DEFAULT_REGISTRY = "https://core-ui-kit-v2-3.vercel.app/r";
+const REGISTRY_API_VERSION = "v1";
+const DEFAULT_REGISTRY = `https://core-ui-kit-v2-3.vercel.app/r/${REGISTRY_API_VERSION}`;
 const registryBase = process.env.COREUI_KIT_REGISTRY ?? DEFAULT_REGISTRY;
+const FETCH_TIMEOUT_MS = 10_000;
 
 const useColor = process.stdout.isTTY && !process.env.NO_COLOR;
 function color(code, text) {
@@ -59,9 +61,46 @@ function parseArgs(argv) {
 }
 
 async function fetchJson(url) {
-  const response = await fetch(url);
-  if (!response.ok) return null;
-  return response.json();
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
+
+  try {
+    const response = await fetch(url, { signal: controller.signal });
+    if (!response.ok) return null;
+    return await response.json();
+  } catch (error) {
+    if (error.name === "AbortError") {
+      throw new Error(`Timed out reaching ${url} after ${FETCH_TIMEOUT_MS / 1000}s. Check your connection or set COREUI_KIT_REGISTRY.`);
+    }
+    throw new Error(`Could not reach ${url}: ${error.message}`);
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
+/** Resolves and sanity-checks a user-supplied --path so we fail with a clear
+ * message instead of a cryptic fs error or writing somewhere unexpected. */
+function resolveTargetDir(rawPath) {
+  const targetDir = rawPath ?? path.join("src", "components", "coreui-kit");
+
+  if (typeof targetDir !== "string" || targetDir.trim() === "") {
+    throw new Error("--path cannot be empty.");
+  }
+
+  const resolved = path.resolve(process.cwd(), targetDir);
+  const root = path.parse(resolved).root;
+  if (resolved === root) {
+    throw new Error(`--path resolves to the filesystem root (${resolved}) — refusing to write there.`);
+  }
+
+  if (existsSync(resolved)) {
+    const stat = statSync(resolved);
+    if (!stat.isDirectory()) {
+      throw new Error(`--path "${targetDir}" exists and is not a directory.`);
+    }
+  }
+
+  return resolved;
 }
 
 async function listComponents() {
@@ -108,11 +147,20 @@ function levenshtein(a, b) {
   return matrix[rows - 1][cols - 1];
 }
 
+/** Returns {bin, args} for the detected package manager, as an argument
+ * array (never a shell string) so it can be run via cross-spawn, which
+ * handles Windows .cmd/.bat resolution and argument escaping correctly --
+ * unlike execFileSync+shell:true, which Node itself warns (DEP0190) does
+ * not actually escape arguments when shell:true is combined with an array. */
 function detectInstallCommand(deps) {
   const cwd = process.cwd();
-  if (existsSync(path.join(cwd, "pnpm-lock.yaml"))) return `pnpm add ${deps.join(" ")}`;
-  if (existsSync(path.join(cwd, "yarn.lock"))) return `yarn add ${deps.join(" ")}`;
-  return `npm install ${deps.join(" ")}`;
+  const packageManager = existsSync(path.join(cwd, "pnpm-lock.yaml"))
+    ? "pnpm"
+    : existsSync(path.join(cwd, "yarn.lock"))
+      ? "yarn"
+      : "npm";
+  const args = packageManager === "npm" ? ["install", ...deps] : ["add", ...deps];
+  return { bin: packageManager, args };
 }
 
 function alreadyInstalled(dep) {
@@ -128,7 +176,7 @@ function alreadyInstalled(dep) {
 }
 
 async function addComponents(slugs, flags) {
-  const targetDir = flags.path ?? path.join("src", "components", "coreui-kit");
+  const targetDir = resolveTargetDir(flags.path);
   const allDeps = new Set();
   let addedCount = 0;
 
@@ -171,13 +219,18 @@ async function addComponents(slugs, flags) {
   const missingDeps = [...allDeps].filter((dep) => !alreadyInstalled(dep));
   if (missingDeps.length === 0) return;
 
+  const { bin, args } = detectInstallCommand(missingDeps);
+
   if (flags.install) {
-    const command = detectInstallCommand(missingDeps);
-    console.log(`\n${bold("Installing dependencies:")} ${command}`);
-    execSync(command, { stdio: "inherit" });
+    console.log(`\n${bold("Installing dependencies:")} ${bin} ${args.join(" ")}`);
+    const result = spawn.sync(bin, args, { stdio: "inherit" });
+    if (result.error) throw result.error;
+    if (result.status !== 0) {
+      throw new Error(`${bin} ${args.join(" ")} exited with code ${result.status}`);
+    }
   } else {
     console.log(`\n${bold("Dependencies needed:")} ${missingDeps.join(", ")}`);
-    console.log(dim(`Run: ${detectInstallCommand(missingDeps)}`));
+    console.log(dim(`Run: ${bin} ${args.join(" ")}`));
   }
 }
 

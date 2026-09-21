@@ -2,6 +2,15 @@
 
 All notable changes to this project are documented in this file. Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); this project uses [Semantic Versioning](https://semver.org/).
 
+## v0.8.1
+
+CLI hardening, based on review feedback before its first publish:
+
+- Dependency installs now run via [`cross-spawn`](https://github.com/moxystudio/node-cross-spawn) with an argument array instead of building a shell command string and running it through `execSync` — a dependency name can no longer be interpreted as shell syntax. (An intermediate attempt using Node's built-in `execFileSync` with `shell: true` turned out to *not* actually be safe on Windows — Node itself deprecated that exact combination as DEP0190, since `shell: true` with an array still just concatenates arguments without escaping them. `cross-spawn` is what npm and Yarn use internally to solve this correctly, including proper `.cmd`/`.bat` resolution on Windows.)
+- `fetch` calls now have a 10s timeout (`AbortController`), instead of hanging indefinitely if the registry is unreachable.
+- `--path` is validated: rejects an empty value, rejects resolving to the filesystem root, and rejects an existing path that isn't a directory — with a clear error message instead of a raw `fs` exception.
+- The registry API is now versioned: `public/r/v1/index.json`, `public/r/v1/<component>.json` (was unversioned `public/r/`). A future breaking schema change ships as `v2` without breaking CLI versions already installed by users.
+
 ## v0.8.0
 
 - Added an install CLI: `npx coreui-kit add <component>` fetches a component's source and dependencies and writes it into your project. Also `npx coreui-kit list`, `--path`, `--overwrite`, `--install`.

@@ -2,9 +2,10 @@ import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 
+const API_VERSION = "v1";
 const rootDir = path.dirname(fileURLToPath(new URL("../package.json", import.meta.url)));
 const registryPath = path.join(rootDir, "registry.json");
-const outDir = path.join(rootDir, "public", "r");
+const outDir = path.join(rootDir, "public", "r", API_VERSION);
 
 function titleCase(slug) {
   return slug
@@ -32,7 +33,7 @@ function main() {
     });
 
     const entry = {
-      $schema: "https://core-ui-kit-v2-3.vercel.app/r/schema.json",
+      $schema: `https://core-ui-kit-v2-3.vercel.app/r/${API_VERSION}/schema.json`,
       name: item.name,
       type: item.type,
       title: titleCase(item.name),
@@ -53,10 +54,10 @@ function main() {
 
   writeFileSync(
     path.join(outDir, "index.json"),
-    JSON.stringify({ $schema: "https://core-ui-kit-v2-3.vercel.app/r/schema.json", items: index }, null, 2)
+    JSON.stringify({ $schema: `https://core-ui-kit-v2-3.vercel.app/r/${API_VERSION}/schema.json`, items: index }, null, 2)
   );
 
-  console.log(`✓ Registry API written — ${manifest.items.length} component definitions in public/r/`);
+  console.log(`✓ Registry API written — ${manifest.items.length} component definitions in public/r/${API_VERSION}/`);
 }
 
 main();

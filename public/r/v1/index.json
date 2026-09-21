@@ -1,0 +1,304 @@
+{
+  "$schema": "https://core-ui-kit-v2-3.vercel.app/r/v1/schema.json",
+  "items": [
+    {
+      "name": "transaction-exchange-overview",
+      "title": "Transaction Exchange Overview",
+      "category": "fintech",
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "premium-wallet-card",
+      "title": "Premium Wallet Card",
+      "category": "fintech",
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "payment-method-stack",
+      "title": "Payment Method Stack",
+      "category": "fintech",
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "revenue-metric-card",
+      "title": "Revenue Metric Card",
+      "category": "fintech",
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "invoice-status-panel",
+      "title": "Invoice Status Panel",
+      "category": "fintech",
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "responsive-sidebar-navigation",
+      "title": "Responsive Sidebar Navigation",
+      "category": "dashboard",
+      "dependencies": [
+        "react",
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "analytics-command-center",
+      "title": "Analytics Command Center",
+      "category": "dashboard",
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "activity-timeline",
+      "title": "Activity Timeline",
+      "category": "dashboard",
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "data-table-pro",
+      "title": "Data Table Pro",
+      "category": "dashboard",
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "system-health-panel",
+      "title": "System Health Panel",
+      "category": "dashboard",
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "upcoming-features-card",
+      "title": "Upcoming Features Card",
+      "category": "interactive",
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "bento-feature-grid",
+      "title": "Bento Feature Grid",
+      "category": "interactive",
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "notification-center",
+      "title": "Notification Center",
+      "category": "interactive",
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "pricing-tier-card",
+      "title": "Pricing Tier Card",
+      "category": "interactive",
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "command-palette",
+      "title": "Command Palette",
+      "category": "interactive",
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "tabs-panel",
+      "title": "Tabs Panel",
+      "category": "interactive",
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "magnetic-action-buttons",
+      "title": "Magnetic Action Buttons",
+      "category": "buttons",
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "segmented-control",
+      "title": "Segmented Control",
+      "category": "buttons",
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "gradient-icon-buttons",
+      "title": "Gradient Icon Buttons",
+      "category": "buttons",
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "floating-action-dock",
+      "title": "Floating Action Dock",
+      "category": "buttons",
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "loading-status-panel",
+      "title": "Loading Status Panel",
+      "category": "loaders",
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "multi-step-progress",
+      "title": "Multi Step Progress",
+      "category": "loaders",
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "circular-progress-stats",
+      "title": "Circular Progress Stats",
+      "category": "loaders",
+      "dependencies": []
+    },
+    {
+      "name": "skeleton-dashboard",
+      "title": "Skeleton Dashboard",
+      "category": "loaders",
+      "dependencies": []
+    },
+    {
+      "name": "smart-login-panel",
+      "title": "Smart Login Panel",
+      "category": "forms",
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "profile-settings-form",
+      "title": "Profile Settings Form",
+      "category": "forms",
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "search-filter-bar",
+      "title": "Search Filter Bar",
+      "category": "forms",
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "file-upload-dropzone",
+      "title": "File Upload Dropzone",
+      "category": "forms",
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "custom-checkbox-kit",
+      "title": "Custom Checkbox Kit",
+      "category": "forms",
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "glass-modal-dialog",
+      "title": "Glass Modal Dialog",
+      "category": "overlays",
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "toast-notification-stack",
+      "title": "Toast Notification Stack",
+      "category": "overlays",
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "tooltip-popover-kit",
+      "title": "Tooltip Popover Kit",
+      "category": "overlays",
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "confirm-delete-dialog",
+      "title": "Confirm Delete Dialog",
+      "category": "overlays",
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "testimonial-carousel",
+      "title": "Testimonial Carousel",
+      "category": "marketing",
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "faq-accordion",
+      "title": "Faq Accordion",
+      "category": "marketing",
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "logo-cloud",
+      "title": "Logo Cloud",
+      "category": "marketing",
+      "dependencies": []
+    },
+    {
+      "name": "newsletter-cta-banner",
+      "title": "Newsletter Cta Banner",
+      "category": "marketing",
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "stats-counter-section",
+      "title": "Stats Counter Section",
+      "category": "marketing",
+      "dependencies": [
+        "lucide-react"
+      ]
+    }
+  ]
+}

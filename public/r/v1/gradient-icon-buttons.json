@@ -1,0 +1,18 @@
+{
+  "$schema": "https://core-ui-kit-v2-3.vercel.app/r/v1/schema.json",
+  "name": "gradient-icon-buttons",
+  "type": "registry:component",
+  "title": "Gradient Icon Buttons",
+  "category": "buttons",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "src/components/registry/buttons/GradientIconButtons.jsx",
+      "target": "components/coreui-kit/GradientIconButtons.jsx",
+      "type": "registry:component",
+      "content": "import { useState } from \"react\";\nimport { Bell, Heart, MessageCircle, Share2, Star, Zap } from \"lucide-react\";\n\nconst actions = [\n  { icon: Heart, label: \"Like\", className: \"from-rose-300 to-pink-500\", toggle: true },\n  { icon: Star, label: \"Favorite\", className: \"from-amber-300 to-orange-500\", toggle: true },\n  { icon: MessageCircle, label: \"Message\", className: \"from-cyan-300 to-blue-500\", toggle: false },\n  { icon: Bell, label: \"Notify\", className: \"from-violet-300 to-fuchsia-500\", toggle: true },\n  { icon: Share2, label: \"Share\", className: \"from-emerald-300 to-teal-500\", toggle: false },\n  { icon: Zap, label: \"Boost\", className: \"from-sky-300 to-indigo-500\", toggle: false },\n];\n\nexport default function GradientIconButtons() {\n  const [pressed, setPressed] = useState({});\n\n  return (\n    <section className=\"w-full max-w-xl rounded-[28px] border border-[var(--border,rgba(255,255,255,.1))] bg-[var(--surface,#0d0d10)] p-6 shadow-[0_18px_60px_rgba(0,0,0,.24)]\">\n      <p className=\"text-xs font-medium text-[var(--text-muted,#64748b)]\">Gradient icon actions</p>\n      <div className=\"mt-5 grid grid-cols-3 gap-3 sm:grid-cols-6\">\n        {actions.map((action) => {\n          const Icon = action.icon;\n          const isActive = action.toggle && Boolean(pressed[action.label]);\n          return (\n            <button\n              key={action.label}\n              type=\"button\"\n              aria-pressed={action.toggle ? isActive : undefined}\n              onClick={() => {\n                if (!action.toggle) return;\n                setPressed((current) => ({ ...current, [action.label]: !current[action.label] }));\n              }}\n              className=\"group flex flex-col items-center gap-2 rounded-2xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300\"\n            >\n              <span\n                className={\n                  \"flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br text-[var(--text-on-accent,#020617)] shadow-lg transition group-hover:-translate-y-1 group-hover:scale-105 \" +\n                  action.className +\n                  (isActive ? \" ring-2 ring-white/70 ring-offset-2 ring-offset-[#0d0d10]\" : \"\")\n                }\n              >\n                <Icon className=\"h-5 w-5\" aria-hidden=\"true\" />\n              </span>\n              <span className=\"text-[10px] font-medium text-[var(--text-subtle,#475569)] group-hover:text-[var(--text-secondary,#cbd5e1)]\">{action.label}</span>\n            </button>\n          );\n        })}\n      </div>\n    </section>\n  );\n}\n"
+    }
+  ]
+}

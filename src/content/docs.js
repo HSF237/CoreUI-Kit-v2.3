@@ -152,6 +152,12 @@ export const docsPages = [
     summary: "Notable changes by version.",
     sections: [
       {
+        heading: "v0.8.1",
+        list: [
+          "CLI hardening: dependency installs now run via cross-spawn with an argument array instead of a shell command string, fetch calls have a 10s timeout, --path is validated, and the registry API is now versioned (public/r/v1/...).",
+        ],
+      },
+      {
         heading: "v0.8.0",
         list: [
           "Added an install CLI: npx coreui-kit add <component> fetches a component's source and dependencies and writes it into your project (also list, --path, --overwrite, --install).",

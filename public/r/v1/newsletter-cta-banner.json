@@ -1,0 +1,18 @@
+{
+  "$schema": "https://core-ui-kit-v2-3.vercel.app/r/v1/schema.json",
+  "name": "newsletter-cta-banner",
+  "type": "registry:component",
+  "title": "Newsletter Cta Banner",
+  "category": "marketing",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "src/components/registry/marketing/NewsletterCtaBanner.jsx",
+      "target": "components/coreui-kit/NewsletterCtaBanner.jsx",
+      "type": "registry:component",
+      "content": "import { useId, useState } from \"react\";\nimport { ArrowRight, Check, Mail } from \"lucide-react\";\n\nexport default function NewsletterCtaBanner() {\n  const [submitted, setSubmitted] = useState(false);\n  const emailId = useId();\n\n  function onSubmit(event) {\n    event.preventDefault();\n    setSubmitted(true);\n  }\n\n  return (\n    <section className=\"relative w-full max-w-2xl overflow-hidden rounded-[30px] border border-fuchsia-300/15 bg-[#0d0a0f] p-7 shadow-[0_25px_80px_rgba(0,0,0,.35)] sm:p-9\">\n      <div aria-hidden=\"true\" className=\"absolute -right-16 -top-16 h-56 w-56 rounded-full bg-fuchsia-400/10 blur-3xl\" />\n      <div aria-hidden=\"true\" className=\"absolute -bottom-20 -left-10 h-56 w-56 rounded-full bg-violet-400/10 blur-3xl\" />\n      <div className=\"relative\">\n        <div className=\"inline-flex items-center gap-2 rounded-full border border-fuchsia-300/20 bg-fuchsia-300/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-fuchsia-200\">\n          <Mail className=\"h-3.5 w-3.5\" aria-hidden=\"true\" />\n          New components monthly\n        </div>\n        <h3 className=\"mt-4 max-w-md text-2xl font-semibold tracking-[-0.03em] text-white sm:text-3xl\">Get new blocks in your inbox.</h3>\n        <p className=\"mt-2 max-w-md text-sm leading-6 text-[var(--text-muted,#64748b)]\">One email whenever a new category ships. No spam, unsubscribe anytime.</p>\n\n        {submitted ? (\n          <p role=\"status\" aria-live=\"polite\" className=\"mt-6 inline-flex items-center gap-2 rounded-xl border border-emerald-300/20 bg-emerald-300/10 px-4 py-3 text-sm font-medium text-emerald-200\">\n            <Check className=\"h-4 w-4\" aria-hidden=\"true\" />\n            You're subscribed — check your inbox to confirm.\n          </p>\n        ) : (\n          <form className=\"mt-6 flex flex-col gap-2 sm:flex-row\" onSubmit={onSubmit}>\n            <label htmlFor={emailId} className=\"sr-only\">\n              Email address\n            </label>\n            <input\n              id={emailId}\n              type=\"email\"\n              name=\"email\"\n              autoComplete=\"email\"\n              required\n              placeholder=\"you@company.com\"\n              className=\"min-w-0 flex-1 rounded-xl border border-[var(--border,rgba(255,255,255,.1))] bg-white/[0.04] px-4 py-3 text-sm text-[var(--text-primary,#e2e8f0)] outline-none placeholder:text-[var(--text-faint,#334155)] focus:border-fuchsia-300/40\"\n            />\n            <button\n              type=\"submit\"\n              className=\"inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-fuchsia-300 to-violet-400 px-5 py-3 text-sm font-bold text-[var(--text-on-accent,#020617)] transition hover:scale-[1.01] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fuchsia-200\"\n            >\n              Subscribe\n              <ArrowRight className=\"h-3.5 w-3.5\" aria-hidden=\"true\" />\n            </button>\n          </form>\n        )}\n      </div>\n    </section>\n  );\n}\n"
+    }
+  ]
+}
