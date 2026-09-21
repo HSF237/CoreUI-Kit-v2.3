@@ -53,7 +53,7 @@ function FilterDropdown({ label, icon: Icon, options, value, onChange, accent })
         onClick={() => setOpen((current) => !current)}
         className={
           "inline-flex h-11 items-center gap-2 rounded-xl border px-3 text-xs font-medium transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-300 " +
-          (accent ?? "border-white/10 bg-white/[0.025] text-slate-400")
+          (accent ?? "border-[var(--border,rgba(255,255,255,.1))] bg-[var(--surface-inset,rgba(255,255,255,.025))] text-[var(--text-tertiary,#94a3b8)]")
         }
       >
         <Icon className="h-3.5 w-3.5" aria-hidden="true" />
@@ -67,7 +67,7 @@ function FilterDropdown({ label, icon: Icon, options, value, onChange, accent })
           aria-label={label}
           tabIndex={-1}
           onKeyDown={onListKeyDown}
-          className="absolute left-0 top-[calc(100%+8px)] z-10 w-48 overflow-hidden rounded-xl border border-white/10 bg-[#0d0d10] p-1.5 shadow-[0_20px_60px_rgba(0,0,0,.4)]"
+          className="absolute left-0 top-[calc(100%+8px)] z-10 w-48 overflow-hidden rounded-xl border border-[var(--border,rgba(255,255,255,.1))] bg-[var(--surface,#0d0d10)] p-1.5 shadow-[0_20px_60px_rgba(0,0,0,.4)]"
         >
           {options.map((option, index) => (
             <li key={option} role="presentation">
@@ -87,7 +87,7 @@ function FilterDropdown({ label, icon: Icon, options, value, onChange, accent })
                   "flex w-full items-center rounded-lg px-3 py-2 text-left text-[13px] transition focus-visible:outline-none " +
                   (option === value
                     ? "bg-amber-300/10 text-amber-200"
-                    : "text-slate-300 hover:bg-white/[0.05] focus-visible:bg-white/[0.05]")
+                    : "text-[var(--text-secondary,#cbd5e1)] hover:bg-white/[0.05] focus-visible:bg-white/[0.05]")
                 }
               >
                 {option}
@@ -123,10 +123,10 @@ export default function SearchFilterBar() {
   }
 
   return (
-    <section className="w-full max-w-4xl rounded-[24px] border border-white/10 bg-[#0d0d10] p-4 shadow-[0_18px_60px_rgba(0,0,0,.24)]">
+    <section className="w-full max-w-4xl rounded-[24px] border border-[var(--border,rgba(255,255,255,.1))] bg-[var(--surface,#0d0d10)] p-4 shadow-[0_18px_60px_rgba(0,0,0,.24)]">
       <div className="flex flex-col gap-3 lg:flex-row">
-        <div className="flex h-11 min-w-0 flex-1 items-center gap-2 rounded-xl border border-white/10 bg-white/[0.025] px-3 focus-within:border-amber-300/30">
-          <Search className="h-4 w-4 text-slate-600" aria-hidden="true" />
+        <div className="flex h-11 min-w-0 flex-1 items-center gap-2 rounded-xl border border-[var(--border,rgba(255,255,255,.1))] bg-[var(--surface-inset,rgba(255,255,255,.025))] px-3 focus-within:border-amber-300/30">
+          <Search className="h-4 w-4 text-[var(--text-subtle,#475569)]" aria-hidden="true" />
           <label htmlFor={searchId} className="sr-only">
             Search projects, owners, tags
           </label>
@@ -134,7 +134,7 @@ export default function SearchFilterBar() {
             id={searchId}
             type="search"
             placeholder="Search projects, owners, tags..."
-            className="min-w-0 flex-1 bg-transparent text-sm text-slate-200 outline-none placeholder:text-slate-700"
+            className="min-w-0 flex-1 bg-transparent text-sm text-[var(--text-primary,#e2e8f0)] outline-none placeholder:text-[var(--text-faint,#334155)]"
           />
         </div>
         <div className="flex flex-wrap gap-2">
@@ -165,7 +165,7 @@ export default function SearchFilterBar() {
               type="button"
               onClick={() => removeTag(tag)}
               aria-label={`Remove ${tag} filter`}
-              className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.03] px-2.5 py-1 text-[10px] font-medium text-slate-400 transition hover:bg-white/[0.06] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-300"
+              className="inline-flex items-center gap-1.5 rounded-full border border-[var(--border,rgba(255,255,255,.1))] bg-white/[0.03] px-2.5 py-1 text-[10px] font-medium text-[var(--text-tertiary,#94a3b8)] transition hover:bg-white/[0.06] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-300"
             >
               {tag}
               <X className="h-3 w-3" aria-hidden="true" />

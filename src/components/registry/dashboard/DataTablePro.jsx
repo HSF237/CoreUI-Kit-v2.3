@@ -37,7 +37,7 @@ function RowMenu({ row, open, onToggle, onClose }) {
         aria-expanded={open}
         aria-controls={open ? menuId : undefined}
         onClick={onToggle}
-        className="rounded-md p-1 text-slate-700 transition hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300"
+        className="rounded-md p-1 text-[var(--text-faint,#334155)] transition hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300"
       >
         <MoreHorizontal className="h-4 w-4" />
       </button>
@@ -46,13 +46,13 @@ function RowMenu({ row, open, onToggle, onClose }) {
           id={menuId}
           role="menu"
           aria-label={`Actions for ${row.name}`}
-          className="absolute right-0 top-[calc(100%+6px)] z-10 w-40 overflow-hidden rounded-xl border border-white/10 bg-[#15151a] p-1.5 shadow-[0_20px_60px_rgba(0,0,0,.4)]"
+          className="absolute right-0 top-[calc(100%+6px)] z-10 w-40 overflow-hidden rounded-xl border border-[var(--border,rgba(255,255,255,.1))] bg-[#15151a] p-1.5 shadow-[0_20px_60px_rgba(0,0,0,.4)]"
         >
-          <button role="menuitem" type="button" onClick={onClose} className="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left text-xs text-slate-300 transition hover:bg-white/[0.06] focus-visible:bg-white/[0.06] focus-visible:outline-none">
+          <button role="menuitem" type="button" onClick={onClose} className="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left text-xs text-[var(--text-secondary,#cbd5e1)] transition hover:bg-white/[0.06] focus-visible:bg-white/[0.06] focus-visible:outline-none">
             <Eye className="h-3.5 w-3.5" aria-hidden="true" />
             View details
           </button>
-          <button role="menuitem" type="button" onClick={onClose} className="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left text-xs text-slate-300 transition hover:bg-white/[0.06] focus-visible:bg-white/[0.06] focus-visible:outline-none">
+          <button role="menuitem" type="button" onClick={onClose} className="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left text-xs text-[var(--text-secondary,#cbd5e1)] transition hover:bg-white/[0.06] focus-visible:bg-white/[0.06] focus-visible:outline-none">
             <Pencil className="h-3.5 w-3.5" aria-hidden="true" />
             Edit account
           </button>
@@ -77,14 +77,14 @@ export default function DataTablePro() {
   );
 
   return (
-    <section className="w-full max-w-4xl overflow-hidden rounded-[28px] border border-white/10 bg-[#0d0d10] shadow-[0_18px_60px_rgba(0,0,0,.24)]">
-      <div className="flex flex-col gap-3 border-b border-white/10 p-5 sm:flex-row sm:items-center sm:justify-between">
+    <section className="w-full max-w-4xl overflow-hidden rounded-[28px] border border-[var(--border,rgba(255,255,255,.1))] bg-[var(--surface,#0d0d10)] shadow-[0_18px_60px_rgba(0,0,0,.24)]">
+      <div className="flex flex-col gap-3 border-b border-[var(--border,rgba(255,255,255,.1))] p-5 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <p className="text-xs text-slate-500">Customers</p>
+          <p className="text-xs text-[var(--text-muted,#64748b)]">Customers</p>
           <h3 className="mt-1 text-xl font-semibold text-white">Account directory</h3>
         </div>
         <div className="flex gap-2">
-          <div className="flex h-9 items-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-3 text-slate-600">
+          <div className="flex h-9 items-center gap-2 rounded-xl border border-[var(--border,rgba(255,255,255,.1))] bg-white/[0.03] px-3 text-[var(--text-subtle,#475569)]">
             <Search className="h-3.5 w-3.5" aria-hidden="true" />
             <label htmlFor={searchId} className="sr-only">
               Search accounts
@@ -95,12 +95,12 @@ export default function DataTablePro() {
               value={query}
               onChange={(event) => setQuery(event.target.value)}
               placeholder="Search"
-              className="w-28 bg-transparent text-xs text-slate-300 outline-none"
+              className="w-28 bg-transparent text-xs text-[var(--text-secondary,#cbd5e1)] outline-none"
             />
           </div>
           <button
             type="button"
-            className="flex h-9 items-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-3 text-xs text-slate-400 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300"
+            className="flex h-9 items-center gap-2 rounded-xl border border-[var(--border,rgba(255,255,255,.1))] bg-white/[0.03] px-3 text-xs text-[var(--text-tertiary,#94a3b8)] transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300"
           >
             <Filter className="h-3.5 w-3.5" aria-hidden="true" />
             Filter
@@ -111,7 +111,7 @@ export default function DataTablePro() {
       <div className="overflow-x-auto">
         <table className="w-full min-w-[650px] border-collapse text-left">
           <thead>
-            <tr className="border-b border-white/10 text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-700">
+            <tr className="border-b border-[var(--border,rgba(255,255,255,.1))] text-[10px] font-semibold uppercase tracking-[0.14em] text-[var(--text-faint,#334155)]">
               <th scope="col" className="px-5 py-3 font-semibold">Customer</th>
               <th scope="col" className="px-5 py-3 font-semibold">Plan</th>
               <th scope="col" className="px-5 py-3 font-semibold">Revenue</th>
@@ -124,26 +124,26 @@ export default function DataTablePro() {
           <tbody>
             {filteredRows.length === 0 && (
               <tr>
-                <td colSpan={5} className="px-5 py-6 text-center text-xs text-slate-600">
+                <td colSpan={5} className="px-5 py-6 text-center text-xs text-[var(--text-subtle,#475569)]">
                   No accounts match "{query}"
                 </td>
               </tr>
             )}
             {filteredRows.map((row) => (
-              <tr key={row.id} className="border-b border-white/5 transition last:border-0 hover:bg-white/[0.025]">
+              <tr key={row.id} className="border-b border-white/5 transition last:border-0 hover:bg-[var(--surface-inset,rgba(255,255,255,.025))]">
                 <td className="px-5 py-3.5">
                   <div className="flex items-center gap-3">
-                    <div aria-hidden="true" className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-slate-700 to-slate-900 text-xs font-bold text-slate-300">
+                    <div aria-hidden="true" className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-slate-700 to-slate-900 text-xs font-bold text-[var(--text-secondary,#cbd5e1)]">
                       {row.name.slice(0, 2).toUpperCase()}
                     </div>
                     <div>
-                      <p className="text-sm font-medium text-slate-200">{row.name}</p>
-                      <p className="text-[10px] text-slate-700">customer@company.com</p>
+                      <p className="text-sm font-medium text-[var(--text-primary,#e2e8f0)]">{row.name}</p>
+                      <p className="text-[10px] text-[var(--text-faint,#334155)]">customer@company.com</p>
                     </div>
                   </div>
                 </td>
-                <td className="px-5 py-3.5 text-xs text-slate-400">{row.plan}</td>
-                <td className="px-5 py-3.5 text-xs font-semibold text-slate-200">{row.revenue}</td>
+                <td className="px-5 py-3.5 text-xs text-[var(--text-tertiary,#94a3b8)]">{row.plan}</td>
+                <td className="px-5 py-3.5 text-xs font-semibold text-[var(--text-primary,#e2e8f0)]">{row.revenue}</td>
                 <td className="px-5 py-3.5">
                   <span
                     className={
@@ -170,13 +170,13 @@ export default function DataTablePro() {
         </table>
       </div>
 
-      <div className="flex items-center justify-between border-t border-white/10 px-5 py-3 text-[11px] text-slate-600">
+      <div className="flex items-center justify-between border-t border-[var(--border,rgba(255,255,255,.1))] px-5 py-3 text-[11px] text-[var(--text-subtle,#475569)]">
         <span>
           Showing {filteredRows.length} of 248
         </span>
         <button
           type="button"
-          className="inline-flex items-center gap-1 text-slate-400 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300"
+          className="inline-flex items-center gap-1 text-[var(--text-tertiary,#94a3b8)] transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300"
         >
           Page 1 <ChevronDown className="h-3 w-3" aria-hidden="true" />
         </button>

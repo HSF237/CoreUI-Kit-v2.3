@@ -104,9 +104,17 @@ export const docsPages = [
         ],
       },
       {
-        heading: "Restyling a component you copy",
+        heading: "Component design tokens (v0.5+)",
         paragraphs: [
-          "Once a component is in your codebase, it's just Tailwind classes. Swap the color utilities (emerald-400, rose-400, etc.) for your own palette, adjust border-radius scale, or change spacing — nothing is namespaced to CoreUI-Kit or requires a theme provider.",
+          "Every block's structural colors — surface backgrounds, borders, and body text — are now written as CSS custom properties with a fallback, e.g. bg-[var(--surface,#0d0d10)] or text-[var(--text-muted,#64748b)]. Each component looks exactly the same as before with zero setup, because the fallback value is the original color.",
+          "To re-theme every copied component at once, define these variables in your own app's global stylesheet — you only need to override the ones you want to change:",
+        ],
+        code: ":root {\n  --surface: #0d0d10;\n  --surface-raised: #111114;\n  --surface-inset: rgba(255, 255, 255, .025);\n  --border: rgba(255, 255, 255, .1);\n  --border-soft: rgba(255, 255, 255, .075);\n  --text-primary: #e2e8f0;\n  --text-secondary: #cbd5e1;\n  --text-tertiary: #94a3b8;\n  --text-muted: #64748b;\n  --text-subtle: #475569;\n  --text-faint: #334155;\n  --text-on-accent: #020617;\n}",
+      },
+      {
+        heading: "Accent colors stay per-component",
+        paragraphs: [
+          "Category accent colors (the amber, emerald, rose, sky and fuchsia touches that give each block its own personality) are deliberately left as plain Tailwind utilities rather than tokens — swap emerald-300 for your own brand color directly in the component file when you want a specific block to match your palette. Border-radius scale and spacing are also plain Tailwind classes, unchanged from before.",
         ],
       },
     ],
@@ -143,6 +151,13 @@ export const docsPages = [
     title: "Changelog",
     summary: "Notable changes by version.",
     sections: [
+      {
+        heading: "v0.6.0",
+        list: [
+          "Structural colors across all 38 blocks now use CSS variables with a fallback (e.g. bg-[var(--surface,#0d0d10)]) instead of hardcoded utilities — re-theme every copied component at once. See the Theming page for the token reference.",
+          "Accent colors stay per-component by design; only surface/border/text tokens are shared.",
+        ],
+      },
       {
         heading: "v0.5.0",
         list: [

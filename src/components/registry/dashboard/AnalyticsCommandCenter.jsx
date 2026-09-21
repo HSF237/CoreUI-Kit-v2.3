@@ -10,15 +10,15 @@ export default function AnalyticsCommandCenter() {
   ];
 
   return (
-    <section className="w-full max-w-4xl rounded-[30px] border border-white/10 bg-[#0d0d10] p-5 shadow-[0_18px_60px_rgba(0,0,0,.24)] sm:p-6">
+    <section className="w-full max-w-4xl rounded-[30px] border border-[var(--border,rgba(255,255,255,.1))] bg-[var(--surface,#0d0d10)] p-5 shadow-[0_18px_60px_rgba(0,0,0,.24)] sm:p-6">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <p className="text-xs text-slate-500">Executive analytics</p>
+          <p className="text-xs text-[var(--text-muted,#64748b)]">Executive analytics</p>
           <h3 className="mt-1 text-xl font-semibold text-white">Growth command center</h3>
         </div>
         <button
           type="button"
-          className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] px-3 py-2 text-xs font-semibold text-slate-300 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-300"
+          className="inline-flex items-center gap-2 rounded-xl border border-[var(--border,rgba(255,255,255,.1))] bg-white/[0.04] px-3 py-2 text-xs font-semibold text-[var(--text-secondary,#cbd5e1)] transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-300"
         >
           Open report <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
         </button>
@@ -28,18 +28,18 @@ export default function AnalyticsCommandCenter() {
         {stats.map((item) => {
           const Icon = item.icon;
           return (
-            <div key={item.label} className="rounded-2xl border border-white/10 bg-white/[0.025] p-4">
+            <div key={item.label} className="rounded-2xl border border-[var(--border,rgba(255,255,255,.1))] bg-[var(--surface-inset,rgba(255,255,255,.025))] p-4">
               <div className="flex items-center justify-between">
                 <Icon className="h-4 w-4 text-blue-300" aria-hidden="true" />
                 <button
                   type="button"
                   aria-label={`More options for ${item.label}`}
-                  className="rounded-md text-slate-700 transition hover:text-slate-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-300"
+                  className="rounded-md text-[var(--text-faint,#334155)] transition hover:text-[var(--text-secondary,#cbd5e1)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-300"
                 >
                   <MoreHorizontal className="h-4 w-4" />
                 </button>
               </div>
-              <p className="mt-5 text-[11px] text-slate-600">{item.label}</p>
+              <p className="mt-5 text-[11px] text-[var(--text-subtle,#475569)]">{item.label}</p>
               <div className="mt-1 flex items-end justify-between">
                 <p className="text-2xl font-semibold text-white">{item.value}</p>
                 <span className="text-[11px] font-semibold text-emerald-300">{item.change}</span>
@@ -50,13 +50,13 @@ export default function AnalyticsCommandCenter() {
       </div>
 
       <div className="mt-3 grid gap-3 lg:grid-cols-[1.55fr_.65fr]">
-        <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-4">
+        <div className="rounded-2xl border border-[var(--border,rgba(255,255,255,.1))] bg-white/[0.02] p-4">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-xs font-medium text-slate-400">Revenue velocity</p>
-              <p className="mt-1 text-[10px] text-slate-700">Last 12 periods</p>
+              <p className="text-xs font-medium text-[var(--text-tertiary,#94a3b8)]">Revenue velocity</p>
+              <p className="mt-1 text-[10px] text-[var(--text-faint,#334155)]">Last 12 periods</p>
             </div>
-            <span className="text-[10px] text-slate-700">Live</span>
+            <span className="text-[10px] text-[var(--text-faint,#334155)]">Live</span>
           </div>
           <div aria-hidden="true" className="mt-6 flex h-44 items-end gap-2">
             {bars.map((bar, i) => (
@@ -64,8 +64,8 @@ export default function AnalyticsCommandCenter() {
             ))}
           </div>
         </div>
-        <div className="rounded-2xl border border-white/10 bg-gradient-to-b from-indigo-400/[0.08] to-transparent p-4">
-          <p className="text-xs font-medium text-slate-400">Goal completion</p>
+        <div className="rounded-2xl border border-[var(--border,rgba(255,255,255,.1))] bg-gradient-to-b from-indigo-400/[0.08] to-transparent p-4">
+          <p className="text-xs font-medium text-[var(--text-tertiary,#94a3b8)]">Goal completion</p>
           <div
             role="progressbar"
             aria-label="Goal completion"
@@ -74,10 +74,10 @@ export default function AnalyticsCommandCenter() {
             aria-valuemax={100}
             className="mx-auto mt-6 flex h-32 w-32 items-center justify-center rounded-full bg-[conic-gradient(#67e8f9_0_78%,rgba(255,255,255,.06)_78%_100%)]"
           >
-            <div className="flex h-24 w-24 items-center justify-center rounded-full bg-[#111114]">
+            <div className="flex h-24 w-24 items-center justify-center rounded-full bg-[var(--surface-elevated,#111114)]">
               <div aria-hidden="true" className="text-center">
                 <p className="text-2xl font-semibold text-white">78%</p>
-                <p className="text-[10px] text-slate-600">on target</p>
+                <p className="text-[10px] text-[var(--text-subtle,#475569)]">on target</p>
               </div>
             </div>
           </div>

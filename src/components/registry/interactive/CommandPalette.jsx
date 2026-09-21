@@ -53,9 +53,9 @@ export default function CommandPalette() {
   const activeOptionId = filtered[highlightedIndex] ? `${listboxId}-${highlightedIndex}` : undefined;
 
   return (
-    <section className="w-full max-w-xl overflow-hidden rounded-[24px] border border-white/10 bg-[#0d0d10]/95 shadow-[0_18px_60px_rgba(0,0,0,.24)] backdrop-blur-2xl">
-      <div className="flex items-center gap-3 border-b border-white/10 px-4 py-3.5">
-        <Search className="h-4 w-4 text-slate-600" aria-hidden="true" />
+    <section className="w-full max-w-xl overflow-hidden rounded-[24px] border border-[var(--border,rgba(255,255,255,.1))] bg-[var(--surface,#0d0d10)]/95 shadow-[0_18px_60px_rgba(0,0,0,.24)] backdrop-blur-2xl">
+      <div className="flex items-center gap-3 border-b border-[var(--border,rgba(255,255,255,.1))] px-4 py-3.5">
+        <Search className="h-4 w-4 text-[var(--text-subtle,#475569)]" aria-hidden="true" />
         <label htmlFor={`${listboxId}-input`} className="sr-only">
           Search commands, pages, and actions
         </label>
@@ -71,17 +71,17 @@ export default function CommandPalette() {
           aria-activedescendant={activeOptionId}
           autoComplete="off"
           placeholder="Search commands, pages, and actions..."
-          className="min-w-0 flex-1 bg-transparent text-sm text-slate-200 outline-none placeholder:text-slate-700"
+          className="min-w-0 flex-1 bg-transparent text-sm text-[var(--text-primary,#e2e8f0)] outline-none placeholder:text-[var(--text-faint,#334155)]"
         />
-        <kbd className="rounded-lg border border-white/10 bg-white/[0.04] px-2 py-1 font-mono text-[10px] text-slate-600">
+        <kbd className="rounded-lg border border-[var(--border,rgba(255,255,255,.1))] bg-white/[0.04] px-2 py-1 font-mono text-[10px] text-[var(--text-subtle,#475569)]">
           ESC
         </kbd>
       </div>
       <div className="p-2">
-        <p className="px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-700">Quick actions</p>
+        <p className="px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-[var(--text-faint,#334155)]">Quick actions</p>
         <ul id={listboxId} role="listbox" aria-label="Quick actions">
           {filtered.length === 0 && (
-            <li className="px-3 py-3 text-sm text-slate-600">No matching commands</li>
+            <li className="px-3 py-3 text-sm text-[var(--text-subtle,#475569)]">No matching commands</li>
           )}
           {filtered.map((item, index) => {
             const Icon = item.icon;
@@ -100,18 +100,18 @@ export default function CommandPalette() {
                     (active ? "bg-white/[0.06]" : "hover:bg-white/[0.04]")
                   }
                 >
-                  <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-white/[0.035] text-slate-400">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-[var(--border,rgba(255,255,255,.1))] bg-white/[0.035] text-[var(--text-tertiary,#94a3b8)]">
                     <Icon className="h-4 w-4" aria-hidden="true" />
                   </div>
-                  <span className="flex-1 text-sm font-medium text-slate-300">{item.label}</span>
-                  <span className="font-mono text-[10px] text-slate-700">{item.hint}</span>
+                  <span className="flex-1 text-sm font-medium text-[var(--text-secondary,#cbd5e1)]">{item.label}</span>
+                  <span className="font-mono text-[10px] text-[var(--text-faint,#334155)]">{item.hint}</span>
                 </button>
               </li>
             );
           })}
         </ul>
       </div>
-      <div className="flex items-center justify-between gap-2 border-t border-white/10 px-4 py-3 text-[10px] text-slate-700">
+      <div className="flex items-center justify-between gap-2 border-t border-[var(--border,rgba(255,255,255,.1))] px-4 py-3 text-[10px] text-[var(--text-faint,#334155)]">
         <span className="flex items-center gap-2">
           <Command className="h-3.5 w-3.5" aria-hidden="true" />
           Type to filter • Enter to select

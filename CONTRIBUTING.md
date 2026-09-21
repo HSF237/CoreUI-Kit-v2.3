@@ -36,6 +36,16 @@ A block that only looks like a button, dialog, or menu is not accepted — every
 
 If you're unsure what pattern applies, check the closest existing block in `src/components/registry/overlays/` or `src/components/registry/dashboard/DataTablePro.jsx` for a worked example.
 
+## Theming conventions
+
+Structural colors (not per-component accent colors) are written as CSS variables with a fallback, so anyone who copies a block can re-theme it without editing the file:
+
+- Surface backgrounds: `bg-[var(--surface,#0d0d10)]`, `bg-[var(--surface-elevated,#111114)]`, `bg-[var(--surface-inset,rgba(255,255,255,.025))]`
+- Borders: `border-[var(--border,rgba(255,255,255,.1))]`, `border-[var(--border-soft,rgba(255,255,255,.075))]`
+- Body text: `text-[var(--text-primary,#e2e8f0)]` down through `text-secondary` (#cbd5e1), `text-tertiary` (#94a3b8), `text-muted` (#64748b), `text-subtle` (#475569), `text-faint` (#334155), and `text-on-accent` (#020617) for text sitting on a bright accent background.
+
+The fallback value is always the color the component was designed with — never invent a new fallback, reuse the exact hex/rgba value that was there before. Category accent colors (`amber-300`, `emerald-300`, `rose-300`, etc.) and one-off hover/nested-panel opacity tweaks stay as plain Tailwind utilities; they're part of a block's individual visual identity, not site-wide chrome. See the Theming page in the Docs for the full token list and how consumers override them.
+
 ## Adding a new component
 
 1. Add the component file under `src/components/registry/<category>/`. Create a new category folder if it genuinely doesn't fit an existing one.

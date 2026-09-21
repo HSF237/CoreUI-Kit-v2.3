@@ -2,6 +2,12 @@
 
 All notable changes to this project are documented in this file. Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); this project uses [Semantic Versioning](https://semver.org/).
 
+## v0.6.0
+
+- Retrofitted all 38 components: structural colors (surface backgrounds, borders, body text) now use CSS variables with a fallback equal to the original color — e.g. `bg-[var(--surface,#0d0d10)]` — instead of hardcoded Tailwind utilities. Zero visual change by default; consumers can now re-theme every copied component at once by defining `--surface`, `--border`, `--text-primary`, etc. in their own global CSS.
+- Category accent colors (amber, emerald, rose, sky, fuchsia...) intentionally stay as plain Tailwind utilities — they're part of each block's individual visual identity, not shared chrome.
+- Updated the Theming docs page with the full token reference, and CONTRIBUTING.md with the convention for new components.
+
 ## v0.5.0
 
 - Added three new blocks: Custom Checkbox Kit (Forms), Tabs Panel (Interactive), Stats Counter Section (Marketing) — 38 blocks total.

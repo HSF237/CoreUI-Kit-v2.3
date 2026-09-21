@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/HSF237/CoreUI-Kit-v2.3/actions/workflows/ci.yml/badge.svg)](https://github.com/HSF237/CoreUI-Kit-v2.3/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
-[![Version](https://img.shields.io/badge/version-0.5.0-informational.svg)](./CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.6.0-informational.svg)](./CHANGELOG.md)
 
 **CoreUI-Kit is a free, open-source copy-and-paste UI registry for React and Tailwind CSS.**
 
@@ -11,7 +11,7 @@ Browse polished production-minded interface blocks, preview them live, inspect t
 **Live site:** https://core-ui-kit-livid.vercel.app/
 **Repository:** https://github.com/HSF237/CoreUI-Kit-v2.3
 
-## v0.5 — 38 production-ready, accessible blocks
+## v0.6 — 38 production-ready, accessible, themeable blocks
 
 CoreUI-Kit currently ships eight categories:
 
@@ -84,6 +84,7 @@ CoreUI-Kit currently ships eight categories:
 ## Why CoreUI-Kit?
 
 - Every block is a real, working component — keyboard-operable, screen-reader-labeled, with visible focus states — not a static mockup. See [CONTRIBUTING.md](./CONTRIBUTING.md#accessibility-conventions) for the bar every block is held to.
+- Structural colors ship as CSS variables with sensible fallbacks — re-theme every copied block at once by overriding a handful of tokens, no per-file editing required. See the [Theming docs](https://core-ui-kit-livid.vercel.app/docs/theming).
 - Live rendered previews with Preview / Code tabs for every block.
 - Every component has its own shareable page at `/components/:slug`.
 - Real, site-wide search — press **⌘K** or **/** anywhere to jump to a component or doc.

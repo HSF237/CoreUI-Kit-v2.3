@@ -43,7 +43,7 @@ function StatCard({ stat, animate }) {
   const value = useCountUp(stat.value, animate);
 
   return (
-    <div className="rounded-2xl border border-white/10 bg-white/[0.025] p-5 text-center">
+    <div className="rounded-2xl border border-[var(--border,rgba(255,255,255,.1))] bg-[var(--surface-inset,rgba(255,255,255,.025))] p-5 text-center">
       <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-300/10 text-emerald-300">
         <Icon className="h-4.5 w-4.5" aria-hidden="true" />
       </div>
@@ -55,7 +55,7 @@ function StatCard({ stat, animate }) {
         {formatValue(stat.value)}
         {stat.suffix} {stat.label}
       </span>
-      <p className="mt-1 text-xs text-slate-600">{stat.label}</p>
+      <p className="mt-1 text-xs text-[var(--text-subtle,#475569)]">{stat.label}</p>
     </div>
   );
 }
@@ -94,9 +94,9 @@ export default function StatsCounterSection() {
   return (
     <section
       ref={sectionRef}
-      className="w-full max-w-3xl rounded-[28px] border border-white/10 bg-[#0d0d10] p-6 shadow-[0_18px_60px_rgba(0,0,0,.24)] sm:p-8"
+      className="w-full max-w-3xl rounded-[28px] border border-[var(--border,rgba(255,255,255,.1))] bg-[var(--surface,#0d0d10)] p-6 shadow-[0_18px_60px_rgba(0,0,0,.24)] sm:p-8"
     >
-      <p className="text-center text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-600">
+      <p className="text-center text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--text-subtle,#475569)]">
         Trusted by the open-source community
       </p>
       <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">

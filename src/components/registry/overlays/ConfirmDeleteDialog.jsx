@@ -94,7 +94,7 @@ export default function ConfirmDeleteDialog() {
               </p>
             </div>
             <div className="px-6 py-5">
-              <label htmlFor={inputId} className="text-[11px] font-medium text-slate-500">
+              <label htmlFor={inputId} className="text-[11px] font-medium text-[var(--text-muted,#64748b)]">
                 Type <span className="font-mono text-rose-300">{CONFIRM_PHRASE}</span> to confirm
               </label>
               <input
@@ -103,13 +103,13 @@ export default function ConfirmDeleteDialog() {
                 onChange={(event) => setValue(event.target.value)}
                 placeholder={CONFIRM_PHRASE}
                 autoComplete="off"
-                className="mt-2 w-full rounded-xl border border-white/10 bg-white/[0.03] px-3.5 py-2.5 text-sm text-slate-200 outline-none placeholder:text-slate-700 focus:border-rose-300/40"
+                className="mt-2 w-full rounded-xl border border-[var(--border,rgba(255,255,255,.1))] bg-white/[0.03] px-3.5 py-2.5 text-sm text-[var(--text-primary,#e2e8f0)] outline-none placeholder:text-[var(--text-faint,#334155)] focus:border-rose-300/40"
               />
               <div className="mt-5 flex flex-col gap-2 sm:flex-row sm:justify-end">
                 <button
                   type="button"
                   onClick={close}
-                  className="rounded-xl border border-white/10 bg-white/[0.03] px-4 py-2.5 text-sm font-semibold text-slate-300 transition hover:bg-white/[0.06] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-300"
+                  className="rounded-xl border border-[var(--border,rgba(255,255,255,.1))] bg-white/[0.03] px-4 py-2.5 text-sm font-semibold text-[var(--text-secondary,#cbd5e1)] transition hover:bg-white/[0.06] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-300"
                 >
                   Cancel
                 </button>

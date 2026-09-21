@@ -24,12 +24,12 @@ function CustomCheckbox({ id, label, hint, checked, onChange }) {
         />
         <Check
           aria-hidden="true"
-          className="relative h-3.5 w-3.5 scale-0 text-slate-950 transition peer-checked:scale-100"
+          className="relative h-3.5 w-3.5 scale-0 text-[var(--text-on-accent,#020617)] transition peer-checked:scale-100"
         />
       </span>
       <span className="min-w-0">
-        <span className="block text-sm font-medium text-slate-200">{label}</span>
-        <span className="block text-[11px] text-slate-600">{hint}</span>
+        <span className="block text-sm font-medium text-[var(--text-primary,#e2e8f0)]">{label}</span>
+        <span className="block text-[11px] text-[var(--text-subtle,#475569)]">{hint}</span>
       </span>
     </label>
   );
@@ -41,7 +41,7 @@ function CustomRadio({ id, name, label, price, checked, onChange }) {
       htmlFor={id}
       className={
         "flex cursor-pointer items-center justify-between gap-3 rounded-xl border p-3 transition " +
-        (checked ? "border-emerald-300/30 bg-emerald-300/[0.06]" : "border-white/10 bg-white/[0.02] hover:bg-white/[0.04]")
+        (checked ? "border-emerald-300/30 bg-emerald-300/[0.06]" : "border-[var(--border,rgba(255,255,255,.1))] bg-white/[0.02] hover:bg-white/[0.04]")
       }
     >
       <span className="flex items-center gap-3">
@@ -60,9 +60,9 @@ function CustomRadio({ id, name, label, price, checked, onChange }) {
           />
           <span aria-hidden="true" className="relative h-2 w-2 scale-0 rounded-full bg-emerald-300 transition peer-checked:scale-100" />
         </span>
-        <span className="text-sm font-medium text-slate-200">{label}</span>
+        <span className="text-sm font-medium text-[var(--text-primary,#e2e8f0)]">{label}</span>
       </span>
-      <span className="text-xs text-slate-500">{price}</span>
+      <span className="text-xs text-[var(--text-muted,#64748b)]">{price}</span>
     </label>
   );
 }
@@ -70,7 +70,7 @@ function CustomRadio({ id, name, label, price, checked, onChange }) {
 function ToggleSwitch({ id, label, checked, onChange }) {
   return (
     <label htmlFor={id} className="flex cursor-pointer items-center justify-between gap-3">
-      <span className="text-sm font-medium text-slate-200">{label}</span>
+      <span className="text-sm font-medium text-[var(--text-primary,#e2e8f0)]">{label}</span>
       <span className="relative inline-flex h-6 w-11 shrink-0 items-center">
         <input
           id={id}
@@ -104,9 +104,9 @@ export default function CustomCheckboxKit() {
   }
 
   return (
-    <section className="w-full max-w-md space-y-6 rounded-[28px] border border-white/10 bg-[#0d0d10] p-5 shadow-[0_18px_60px_rgba(0,0,0,.24)] sm:p-6">
+    <section className="w-full max-w-md space-y-6 rounded-[28px] border border-[var(--border,rgba(255,255,255,.1))] bg-[var(--surface,#0d0d10)] p-5 shadow-[0_18px_60px_rgba(0,0,0,.24)] sm:p-6">
       <div>
-        <h3 id={`${groupId}-notifications`} className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-600">
+        <h3 id={`${groupId}-notifications`} className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--text-subtle,#475569)]">
           Notifications
         </h3>
         <div role="group" aria-labelledby={`${groupId}-notifications`} className="mt-2 space-y-1">
@@ -124,7 +124,7 @@ export default function CustomCheckboxKit() {
       </div>
 
       <div>
-        <h3 id={`${groupId}-plan`} className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-600">
+        <h3 id={`${groupId}-plan`} className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--text-subtle,#475569)]">
           Billing cycle
         </h3>
         <div role="radiogroup" aria-labelledby={`${groupId}-plan`} className="mt-2 space-y-2">
@@ -147,7 +147,7 @@ export default function CustomCheckboxKit() {
         </div>
       </div>
 
-      <div className="border-t border-white/10 pt-4">
+      <div className="border-t border-[var(--border,rgba(255,255,255,.1))] pt-4">
         <ToggleSwitch id={`${groupId}-dark-mode`} label="Dark mode" checked={darkMode} onChange={() => setDarkMode((v) => !v)} />
       </div>
     </section>

@@ -9,7 +9,7 @@ const steps = [
 
 export default function MultiStepProgress() {
   return (
-    <nav aria-label="Onboarding progress" className="w-full max-w-3xl rounded-[28px] border border-white/10 bg-[#0d0d10] p-5 shadow-[0_18px_60px_rgba(0,0,0,.24)] sm:p-6">
+    <nav aria-label="Onboarding progress" className="w-full max-w-3xl rounded-[28px] border border-[var(--border,rgba(255,255,255,.1))] bg-[var(--surface,#0d0d10)] p-5 shadow-[0_18px_60px_rgba(0,0,0,.24)] sm:p-6">
       <ol className="grid grid-cols-4 gap-2">
         {steps.map((step, index) => {
           const Icon = step.icon;
@@ -27,15 +27,15 @@ export default function MultiStepProgress() {
                   className={
                     "flex h-10 w-10 items-center justify-center rounded-full border " +
                     (step.done
-                      ? "border-blue-300 bg-blue-300 text-slate-950"
+                      ? "border-blue-300 bg-blue-300 text-[var(--text-on-accent,#020617)]"
                       : step.active
                         ? "border-blue-300/40 bg-blue-300/10 text-blue-300"
-                        : "border-white/10 bg-[#0a1422] text-slate-700")
+                        : "border-[var(--border,rgba(255,255,255,.1))] bg-[#0a1422] text-[var(--text-faint,#334155)]")
                   }
                 >
                   {step.done ? <Check className="h-4 w-4" aria-hidden="true" /> : <Icon className="h-4 w-4" aria-hidden="true" />}
                 </div>
-                <p className={"mt-2 text-[11px] font-medium " + (complete ? "text-slate-300" : "text-slate-700")}>
+                <p className={"mt-2 text-[11px] font-medium " + (complete ? "text-[var(--text-secondary,#cbd5e1)]" : "text-[var(--text-faint,#334155)]")}>
                   {step.label}
                   <span className="sr-only"> — {statusLabel}</span>
                 </p>

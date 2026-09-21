@@ -27,7 +27,7 @@ function Tooltip({ label, children }) {
         <span
           id={tooltipId}
           role="tooltip"
-          className="pointer-events-none absolute -top-11 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-lg border border-white/10 bg-[#18181c] px-3 py-1.5 text-[11px] font-medium text-slate-200 shadow-lg"
+          className="pointer-events-none absolute -top-11 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-lg border border-[var(--border,rgba(255,255,255,.1))] bg-[#18181c] px-3 py-1.5 text-[11px] font-medium text-[var(--text-primary,#e2e8f0)] shadow-lg"
         >
           {label}
           <span className="absolute left-1/2 top-full -translate-x-1/2 border-4 border-transparent border-t-[#18181c]" />
@@ -105,7 +105,7 @@ function AccountMenu() {
         aria-controls={open ? menuId : undefined}
         onClick={() => setOpen((value) => !value)}
         onKeyDown={onTriggerKeyDown}
-        className="flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-2.5 text-sm font-medium text-slate-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300"
+        className="flex items-center gap-2 rounded-xl border border-[var(--border,rgba(255,255,255,.1))] bg-white/[0.03] px-4 py-2.5 text-sm font-medium text-[var(--text-secondary,#cbd5e1)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300"
       >
         <span className="h-6 w-6 rounded-full bg-gradient-to-br from-sky-300 to-blue-500" />
         Account menu
@@ -117,7 +117,7 @@ function AccountMenu() {
           role="menu"
           aria-label="Account menu"
           onKeyDown={onMenuKeyDown}
-          className="absolute left-0 top-[calc(100%+10px)] w-56 overflow-hidden rounded-2xl border border-white/10 bg-[#0d0d10] p-1.5 shadow-[0_20px_60px_rgba(0,0,0,.4)]"
+          className="absolute left-0 top-[calc(100%+10px)] w-56 overflow-hidden rounded-2xl border border-[var(--border,rgba(255,255,255,.1))] bg-[var(--surface,#0d0d10)] p-1.5 shadow-[0_20px_60px_rgba(0,0,0,.4)]"
         >
           {menuItems.map((item, index) => {
             const Icon = item.icon;
@@ -130,9 +130,9 @@ function AccountMenu() {
                 role="menuitem"
                 type="button"
                 onClick={closeAndReturnFocus}
-                className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left text-[13px] text-slate-300 transition hover:bg-white/[0.05] focus-visible:bg-white/[0.05] focus-visible:outline-none"
+                className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left text-[13px] text-[var(--text-secondary,#cbd5e1)] transition hover:bg-white/[0.05] focus-visible:bg-white/[0.05] focus-visible:outline-none"
               >
-                <Icon className="h-3.5 w-3.5 text-slate-600" />
+                <Icon className="h-3.5 w-3.5 text-[var(--text-subtle,#475569)]" />
                 {item.label}
               </button>
             );
@@ -162,14 +162,14 @@ export default function TooltipPopoverKit() {
       <div className="relative flex items-center gap-4">
         <button
           type="button"
-          className="rounded-xl border border-white/10 bg-white/[0.03] px-4 py-2.5 text-sm font-medium text-slate-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300"
+          className="rounded-xl border border-[var(--border,rgba(255,255,255,.1))] bg-white/[0.03] px-4 py-2.5 text-sm font-medium text-[var(--text-secondary,#cbd5e1)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300"
         >
           Hover me
         </button>
         <Tooltip label="Copies the current invite link">
           <button
             type="button"
-            className="rounded-xl border border-white/10 bg-white/[0.03] px-4 py-2.5 text-sm font-medium text-slate-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300"
+            className="rounded-xl border border-[var(--border,rgba(255,255,255,.1))] bg-white/[0.03] px-4 py-2.5 text-sm font-medium text-[var(--text-secondary,#cbd5e1)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300"
           >
             Tooltip target
           </button>

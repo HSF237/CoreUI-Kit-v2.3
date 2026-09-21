@@ -35,7 +35,7 @@ export default function FaqAccordion() {
 
   return (
     <section className="w-full max-w-2xl">
-      <div className="divide-y divide-white/10 overflow-hidden rounded-[26px] border border-white/10 bg-[#0d0d10]">
+      <div className="divide-y divide-white/10 overflow-hidden rounded-[26px] border border-[var(--border,rgba(255,255,255,.1))] bg-[var(--surface,#0d0d10)]">
         {faqs.map((item, index) => {
           const open = openIndexes.has(index);
           const panelId = `${baseId}-panel-${index}`;
@@ -51,15 +51,15 @@ export default function FaqAccordion() {
                   onClick={() => toggle(index)}
                   className="flex w-full items-center justify-between gap-4 text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fuchsia-300"
                 >
-                  <span className="text-sm font-medium text-slate-200 sm:text-[15px]">{item.q}</span>
+                  <span className="text-sm font-medium text-[var(--text-primary,#e2e8f0)] sm:text-[15px]">{item.q}</span>
                   <ChevronDown
                     aria-hidden="true"
-                    className={"h-4 w-4 shrink-0 text-slate-600 transition-transform " + (open ? "rotate-180 text-fuchsia-300" : "")}
+                    className={"h-4 w-4 shrink-0 text-[var(--text-subtle,#475569)] transition-transform " + (open ? "rotate-180 text-fuchsia-300" : "")}
                   />
                 </button>
               </h3>
               {open && (
-                <p id={panelId} role="region" aria-labelledby={buttonId} className="mt-3 max-w-xl text-sm leading-6 text-slate-500">
+                <p id={panelId} role="region" aria-labelledby={buttonId} className="mt-3 max-w-xl text-sm leading-6 text-[var(--text-muted,#64748b)]">
                   {item.a}
                 </p>
               )}

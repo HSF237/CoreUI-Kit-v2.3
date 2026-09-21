@@ -34,7 +34,7 @@ export default function SiteHeader({ onOpenSearch }) {
                   CoreUI-Kit
                 </p>
                 <span className="rounded-md border border-[var(--chrome-border)] bg-[var(--chrome-hover)] px-2 py-0.5 text-[9px] font-bold text-[var(--chrome-text-muted)]">
-                  v0.5
+                  v0.6
                 </span>
               </div>
               <p className="truncate text-[10px] text-[var(--chrome-text-muted)]">

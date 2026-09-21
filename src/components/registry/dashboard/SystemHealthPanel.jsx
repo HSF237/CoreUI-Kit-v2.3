@@ -9,10 +9,10 @@ const services = [
 
 export default function SystemHealthPanel() {
   return (
-    <section className="w-full max-w-2xl rounded-[28px] border border-white/10 bg-[#0d0d10] p-5 shadow-[0_18px_60px_rgba(0,0,0,.24)] sm:p-6">
+    <section className="w-full max-w-2xl rounded-[28px] border border-[var(--border,rgba(255,255,255,.1))] bg-[var(--surface,#0d0d10)] p-5 shadow-[0_18px_60px_rgba(0,0,0,.24)] sm:p-6">
       <div className="flex items-start justify-between gap-4">
         <div>
-          <p className="text-xs text-slate-500">Infrastructure</p>
+          <p className="text-xs text-[var(--text-muted,#64748b)]">Infrastructure</p>
           <h3 className="mt-1 text-xl font-semibold text-white">System health</h3>
         </div>
         <div role="status" className="inline-flex items-center gap-1.5 rounded-full border border-emerald-300/15 bg-emerald-300/[0.07] px-2.5 py-1 text-[10px] font-semibold text-emerald-300">
@@ -24,17 +24,17 @@ export default function SystemHealthPanel() {
         {services.map((service, index) => {
           const Icon = service.icon;
           return (
-            <li key={service.name} className="rounded-2xl border border-white/10 bg-white/[0.025] p-4">
+            <li key={service.name} className="rounded-2xl border border-[var(--border,rgba(255,255,255,.1))] bg-[var(--surface-inset,rgba(255,255,255,.025))] p-4">
               <div className="flex items-center justify-between">
                 <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-300/[0.08] text-blue-300">
                   <Icon className="h-4 w-4" aria-hidden="true" />
                 </div>
                 <span className="text-[10px] font-semibold text-emerald-300">Healthy</span>
               </div>
-              <p className="mt-4 text-sm font-medium text-slate-200">{service.name}</p>
+              <p className="mt-4 text-sm font-medium text-[var(--text-primary,#e2e8f0)]">{service.name}</p>
               <div className="mt-2 flex items-center justify-between">
-                <span className="text-[10px] text-slate-600">30d uptime</span>
-                <span className="font-mono text-[11px] text-slate-400">{service.value}</span>
+                <span className="text-[10px] text-[var(--text-subtle,#475569)]">30d uptime</span>
+                <span className="font-mono text-[11px] text-[var(--text-tertiary,#94a3b8)]">{service.value}</span>
               </div>
               <div aria-hidden="true" className="mt-3 flex h-8 items-end gap-1">
                 {Array.from({ length: 14 }).map((_, i) => (

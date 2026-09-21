@@ -21,9 +21,9 @@ export default function SegmentedControl() {
   }
 
   return (
-    <section className="w-full max-w-lg rounded-[26px] border border-white/10 bg-[#0d0d10] p-6 shadow-[0_18px_60px_rgba(0,0,0,.24)]">
-      <p className="text-xs text-slate-500">View preference</p>
-      <div role="radiogroup" aria-label="View preference" className="mt-4 inline-flex rounded-2xl border border-white/10 bg-black/15 p-1.5">
+    <section className="w-full max-w-lg rounded-[26px] border border-[var(--border,rgba(255,255,255,.1))] bg-[var(--surface,#0d0d10)] p-6 shadow-[0_18px_60px_rgba(0,0,0,.24)]">
+      <p className="text-xs text-[var(--text-muted,#64748b)]">View preference</p>
+      <div role="radiogroup" aria-label="View preference" className="mt-4 inline-flex rounded-2xl border border-[var(--border,rgba(255,255,255,.1))] bg-black/15 p-1.5">
         {options.map((item, index) => {
           const Icon = item.icon;
           const active = item.label === selected;
@@ -41,7 +41,7 @@ export default function SegmentedControl() {
               onKeyDown={(event) => onKeyDown(event, index)}
               className={
                 "flex items-center gap-2 rounded-xl px-3.5 py-2 text-xs font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300 " +
-                (active ? "bg-white text-slate-950 shadow-lg" : "text-slate-500 hover:text-white")
+                (active ? "bg-white text-[var(--text-on-accent,#020617)] shadow-lg" : "text-[var(--text-muted,#64748b)] hover:text-white")
               }
             >
               <Icon className="h-3.5 w-3.5" aria-hidden="true" />
@@ -50,7 +50,7 @@ export default function SegmentedControl() {
           );
         })}
       </div>
-      <div role="status" aria-live="polite" className="mt-6 rounded-2xl border border-dashed border-white/10 p-5 text-center text-xs text-slate-600">
+      <div role="status" aria-live="polite" className="mt-6 rounded-2xl border border-dashed border-[var(--border,rgba(255,255,255,.1))] p-5 text-center text-xs text-[var(--text-subtle,#475569)]">
         {selected} view selected — segmented controls work especially well for display modes and scoped filters.
       </div>
     </section>

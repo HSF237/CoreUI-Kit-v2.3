@@ -24,20 +24,20 @@ export default function TestimonialCarousel() {
   }
 
   return (
-    <section aria-roledescription="carousel" aria-label="Customer testimonials" className="w-full max-w-2xl rounded-[28px] border border-white/10 bg-[#0d0d10] p-6 shadow-[0_18px_60px_rgba(0,0,0,.24)] sm:p-8">
+    <section aria-roledescription="carousel" aria-label="Customer testimonials" className="w-full max-w-2xl rounded-[28px] border border-[var(--border,rgba(255,255,255,.1))] bg-[var(--surface,#0d0d10)] p-6 shadow-[0_18px_60px_rgba(0,0,0,.24)] sm:p-8">
       <Quote className="h-8 w-8 text-fuchsia-300/50" aria-hidden="true" />
       <div role="group" aria-roledescription="slide" aria-label={`${index + 1} of ${testimonials.length}`}>
-        <p role="status" aria-live="polite" className="mt-4 text-lg leading-8 text-slate-200 sm:text-xl">
+        <p role="status" aria-live="polite" className="mt-4 text-lg leading-8 text-[var(--text-primary,#e2e8f0)] sm:text-xl">
           "{active.quote}"
         </p>
         <div className="mt-6 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <span aria-hidden="true" className="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-fuchsia-300 to-violet-500 text-sm font-semibold text-slate-950">
+            <span aria-hidden="true" className="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-fuchsia-300 to-violet-500 text-sm font-semibold text-[var(--text-on-accent,#020617)]">
               {active.name.split(" ").map((part) => part[0]).join("")}
             </span>
             <div>
               <p className="text-sm font-semibold text-white">{active.name}</p>
-              <p className="text-xs text-slate-600">{active.role}</p>
+              <p className="text-xs text-[var(--text-subtle,#475569)]">{active.role}</p>
             </div>
           </div>
           <div className="flex items-center gap-1 text-amber-300">
@@ -48,7 +48,7 @@ export default function TestimonialCarousel() {
           </div>
         </div>
       </div>
-      <div className="mt-6 flex items-center justify-between border-t border-white/10 pt-5">
+      <div className="mt-6 flex items-center justify-between border-t border-[var(--border,rgba(255,255,255,.1))] pt-5">
         <div className="flex items-center gap-1.5">
           {testimonials.map((item, i) => (
             <button
@@ -66,7 +66,7 @@ export default function TestimonialCarousel() {
             type="button"
             onClick={() => go(-1)}
             aria-label="Previous testimonial"
-            className="flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] text-slate-400 transition hover:bg-white/[0.06] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fuchsia-300"
+            className="flex h-8 w-8 items-center justify-center rounded-full border border-[var(--border,rgba(255,255,255,.1))] bg-white/[0.03] text-[var(--text-tertiary,#94a3b8)] transition hover:bg-white/[0.06] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fuchsia-300"
           >
             <ChevronLeft className="h-4 w-4" />
           </button>
@@ -74,7 +74,7 @@ export default function TestimonialCarousel() {
             type="button"
             onClick={() => go(1)}
             aria-label="Next testimonial"
-            className="flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] text-slate-400 transition hover:bg-white/[0.06] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fuchsia-300"
+            className="flex h-8 w-8 items-center justify-center rounded-full border border-[var(--border,rgba(255,255,255,.1))] bg-white/[0.03] text-[var(--text-tertiary,#94a3b8)] transition hover:bg-white/[0.06] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fuchsia-300"
           >
             <ChevronRight className="h-4 w-4" />
           </button>

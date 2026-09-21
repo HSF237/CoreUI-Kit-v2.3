@@ -14,8 +14,8 @@ export default function GradientIconButtons() {
   const [pressed, setPressed] = useState({});
 
   return (
-    <section className="w-full max-w-xl rounded-[28px] border border-white/10 bg-[#0d0d10] p-6 shadow-[0_18px_60px_rgba(0,0,0,.24)]">
-      <p className="text-xs font-medium text-slate-500">Gradient icon actions</p>
+    <section className="w-full max-w-xl rounded-[28px] border border-[var(--border,rgba(255,255,255,.1))] bg-[var(--surface,#0d0d10)] p-6 shadow-[0_18px_60px_rgba(0,0,0,.24)]">
+      <p className="text-xs font-medium text-[var(--text-muted,#64748b)]">Gradient icon actions</p>
       <div className="mt-5 grid grid-cols-3 gap-3 sm:grid-cols-6">
         {actions.map((action) => {
           const Icon = action.icon;
@@ -33,14 +33,14 @@ export default function GradientIconButtons() {
             >
               <span
                 className={
-                  "flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br text-slate-950 shadow-lg transition group-hover:-translate-y-1 group-hover:scale-105 " +
+                  "flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br text-[var(--text-on-accent,#020617)] shadow-lg transition group-hover:-translate-y-1 group-hover:scale-105 " +
                   action.className +
                   (isActive ? " ring-2 ring-white/70 ring-offset-2 ring-offset-[#0d0d10]" : "")
                 }
               >
                 <Icon className="h-5 w-5" aria-hidden="true" />
               </span>
-              <span className="text-[10px] font-medium text-slate-600 group-hover:text-slate-300">{action.label}</span>
+              <span className="text-[10px] font-medium text-[var(--text-subtle,#475569)] group-hover:text-[var(--text-secondary,#cbd5e1)]">{action.label}</span>
             </button>
           );
         })}
