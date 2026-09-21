@@ -1,7 +1,7 @@
 {
   "name": "coreui-kit",
   "private": true,
-  "version": "0.7.1",
+  "version": "0.8.0",
   "type": "module",
   "description": "A free, open-source copy-and-paste React + Tailwind CSS UI registry and showcase.",
   "author": "CoreUI-Kit contributors",
@@ -16,12 +16,13 @@
   },
   "scripts": {
     "dev": "vite",
-    "prebuild": "node scripts/generate-sitemap.mjs",
+    "prebuild": "node scripts/generate-sitemap.mjs && node scripts/generate-registry-api.mjs",
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint .",
     "sitemap": "node scripts/generate-sitemap.mjs",
     "registry:validate": "node scripts/validate-registry.mjs",
+    "registry:api": "node scripts/generate-registry-api.mjs",
     "test": "vitest run",
     "test:watch": "vitest",
     "check": "npm run registry:validate && npm run lint && npm run test && npm run build"

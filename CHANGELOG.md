@@ -2,6 +2,17 @@
 
 All notable changes to this project are documented in this file. Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); this project uses [Semantic Versioning](https://semver.org/).
 
+## v0.8.0
+
+- Added an install CLI: `npx coreui-kit add <component>` fetches a component's source and dependencies and writes it into your project. Also `npx coreui-kit list`, `--path`, `--overwrite`, `--install`.
+- The CLI (`cli/`) is its own independent, zero-dependency npm package — publishing it never pulls in this repo's own React/Vite/testing tooling as install dependencies.
+- Added `scripts/generate-registry-api.mjs`, run automatically as part of `prebuild`, which turns `registry.json` into a static JSON API under `public/r/` (one file per component plus an index) that the CLI reads from the deployed site.
+- **Not yet live publicly**: `npx coreui-kit` only works once `npm publish` has been run from `cli/` under the maintainer's own npm account — this requires npm credentials that aren't available to automate.
+
+## v0.7.2
+
+- Reverted the homepage's 2-column gallery grid (added in v0.7.1). It broke wide, multi-panel components like `ResponsiveSidebarNavigation`, `DataTablePro`, and `AnalyticsCommandCenter` — their internal `sm:`/`md:`/`lg:` breakpoints respond to the browser's viewport width, not the width of the grid column they're placed in, so they rendered their "desktop" layout inside a half-width column and visibly broke (overlapping text, truncated labels). Back to a single full-width column, which is correct for every component regardless of its internal responsive assumptions. A denser gallery layout needs either a curated per-component allowlist or a container-query-based refactor — not a blanket grid change — and either would need visual verification in a real browser before shipping again.
+
 ## v0.7.1
 
 - The homepage component gallery now lays out in a 2-column grid on wide screens (`xl:` breakpoint and up) instead of stacking every component full-width in a single column. Most blocks are `max-w-md`–`max-w-2xl` internally, so the old single-column layout left a lot of dead space on desktop.

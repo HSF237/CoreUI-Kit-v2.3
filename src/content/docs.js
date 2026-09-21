@@ -152,6 +152,17 @@ export const docsPages = [
     summary: "Notable changes by version.",
     sections: [
       {
+        heading: "v0.8.0",
+        list: [
+          "Added an install CLI: npx coreui-kit add <component> fetches a component's source and dependencies and writes it into your project (also list, --path, --overwrite, --install).",
+          "The CLI is its own independent, zero-dependency npm package, published separately from this site's own tooling.",
+        ],
+      },
+      {
+        heading: "v0.7.2",
+        list: ["Reverted the 2-column gallery grid from v0.7.1 — it broke wide, multi-panel components whose internal responsive breakpoints assume full viewport width. Back to a single full-width column."],
+      },
+      {
         heading: "v0.7.1",
         list: ["The homepage gallery now lays out in a 2-column grid on wide screens instead of a single full-width column."],
       },

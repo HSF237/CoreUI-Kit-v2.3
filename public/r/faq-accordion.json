@@ -1,0 +1,18 @@
+{
+  "$schema": "https://core-ui-kit-v2-3.vercel.app/r/schema.json",
+  "name": "faq-accordion",
+  "type": "registry:component",
+  "title": "Faq Accordion",
+  "category": "marketing",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "src/components/registry/marketing/FaqAccordion.jsx",
+      "target": "components/coreui-kit/FaqAccordion.jsx",
+      "type": "registry:component",
+      "content": "import { useId, useState } from \"react\";\nimport { ChevronDown } from \"lucide-react\";\n\nconst faqs = [\n  {\n    q: \"Is CoreUI-Kit really free to use commercially?\",\n    a: \"Yes. Everything in the registry is MIT licensed — use it in personal, client or commercial projects with no attribution required.\",\n  },\n  {\n    q: \"Do I need to install a package?\",\n    a: \"No runtime package. You copy the component source directly into your project, so there's nothing to version or update later.\",\n  },\n  {\n    q: \"Which frameworks are supported?\",\n    a: \"Every block is plain React and Tailwind CSS. It drops into any React setup — Vite, Next.js, Remix — without extra configuration.\",\n  },\n  {\n    q: \"Can I customize the components?\",\n    a: \"Since you own the source the moment you copy it, you can restyle, extend or strip down any block exactly like code you wrote yourself.\",\n  },\n];\n\nexport default function FaqAccordion() {\n  const [openIndexes, setOpenIndexes] = useState(() => new Set([0]));\n  const baseId = useId();\n\n  function toggle(index) {\n    setOpenIndexes((current) => {\n      const next = new Set(current);\n      if (next.has(index)) next.delete(index);\n      else next.add(index);\n      return next;\n    });\n  }\n\n  return (\n    <section className=\"w-full max-w-2xl\">\n      <div className=\"divide-y divide-white/10 overflow-hidden rounded-[26px] border border-[var(--border,rgba(255,255,255,.1))] bg-[var(--surface,#0d0d10)]\">\n        {faqs.map((item, index) => {\n          const open = openIndexes.has(index);\n          const panelId = `${baseId}-panel-${index}`;\n          const buttonId = `${baseId}-button-${index}`;\n          return (\n            <div key={item.q} className=\"px-5 py-4 sm:px-6\">\n              <h3>\n                <button\n                  id={buttonId}\n                  type=\"button\"\n                  aria-expanded={open}\n                  aria-controls={panelId}\n                  onClick={() => toggle(index)}\n                  className=\"flex w-full items-center justify-between gap-4 text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fuchsia-300\"\n                >\n                  <span className=\"text-sm font-medium text-[var(--text-primary,#e2e8f0)] sm:text-[15px]\">{item.q}</span>\n                  <ChevronDown\n                    aria-hidden=\"true\"\n                    className={\"h-4 w-4 shrink-0 text-[var(--text-subtle,#475569)] transition-transform \" + (open ? \"rotate-180 text-fuchsia-300\" : \"\")}\n                  />\n                </button>\n              </h3>\n              {open && (\n                <p id={panelId} role=\"region\" aria-labelledby={buttonId} className=\"mt-3 max-w-xl text-sm leading-6 text-[var(--text-muted,#64748b)]\">\n                  {item.a}\n                </p>\n              )}\n            </div>\n          );\n        })}\n      </div>\n    </section>\n  );\n}\n"
+    }
+  ]
+}

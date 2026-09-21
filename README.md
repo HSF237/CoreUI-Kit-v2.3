@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/HSF237/CoreUI-Kit-v2.3/actions/workflows/ci.yml/badge.svg)](https://github.com/HSF237/CoreUI-Kit-v2.3/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
-[![Version](https://img.shields.io/badge/version-0.7.1-informational.svg)](./CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.8.0-informational.svg)](./CHANGELOG.md)
 
 **CoreUI-Kit is a free, open-source copy-and-paste UI registry for React and Tailwind CSS.**
 
@@ -11,7 +11,7 @@ Browse polished production-minded interface blocks, preview them live, inspect t
 **Live site:** https://core-ui-kit-v2-3.vercel.app/
 **Repository:** https://github.com/HSF237/CoreUI-Kit-v2.3
 
-## v0.7 — 38 production-ready, accessible, themeable, tested blocks
+## v0.8 — 38 production-ready, accessible, themeable, tested, installable blocks
 
 CoreUI-Kit currently ships eight categories:
 
@@ -199,7 +199,17 @@ npm run preview
 
 ## Using a single component in your own project
 
-You don't need to clone the whole repository. Open the component on its detail page (`/components/<slug>`), switch to the **Code** tab, and copy it into your project. Make sure Tailwind CSS is already set up, and install `lucide-react` if the component uses icons.
+**CLI (recommended):**
+
+```bash
+npx coreui-kit add tabs-panel
+npx coreui-kit add tabs-panel premium-wallet-card --install
+npx coreui-kit list
+```
+
+Writes the component file(s) into `src/components/coreui-kit/` (override with `--path`), reports or auto-installs (`--install`) any missing npm dependencies, and skips files that already exist unless you pass `--overwrite`. See [cli/README.md](./cli/README.md) for the full command reference.
+
+**Copy-paste:** you don't need to clone the whole repository or use the CLI at all. Open the component on its detail page (`/components/<slug>`), switch to the **Code** tab, and copy it into your project. Make sure Tailwind CSS is already set up, and install `lucide-react` if the component uses icons.
 
 See the [Docs](https://core-ui-kit-v2-3.vercel.app/docs) for the full installation and theming guide.
 

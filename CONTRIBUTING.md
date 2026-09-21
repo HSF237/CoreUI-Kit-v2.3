@@ -52,13 +52,14 @@ The fallback value is always the color the component was designed with — never
 2. Import the component and its `?raw` source in `src/registry/index.js`, and add its metadata (`slug`, `title`, `description`, `category`, `tags`) to the `registryItems` array.
 3. Add matching metadata to `registry.json`, including any npm dependencies beyond `react` and `lucide-react`.
 4. If you added a new category, register it in both `registry.json`'s `categories` array and the `categories` export in `src/registry/index.js`, plus an icon/color entry in `src/registry/categoryTheme.js`.
-5. Run the full check before opening a PR:
+5. Don't hand-edit anything under `public/r/` — those files are generated from `registry.json` by `npm run registry:api` (also runs automatically as part of `prebuild`) and back the `npx coreui-kit add <component>` CLI in `cli/`.
+6. Run the full check before opening a PR:
 
    ```bash
    npm run check
    ```
 
-   This validates `registry.json` against the filesystem, lints, and produces a production build.
+   This validates `registry.json` against the filesystem, lints, runs the test suite, and produces a production build.
 
 ## Reporting issues
 

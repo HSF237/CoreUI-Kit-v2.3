@@ -1,0 +1,18 @@
+{
+  "$schema": "https://core-ui-kit-v2-3.vercel.app/r/schema.json",
+  "name": "segmented-control",
+  "type": "registry:component",
+  "title": "Segmented Control",
+  "category": "buttons",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "src/components/registry/buttons/SegmentedControl.jsx",
+      "target": "components/coreui-kit/SegmentedControl.jsx",
+      "type": "registry:component",
+      "content": "import { useRef, useState } from \"react\";\nimport { Grid2X2, List, PanelsTopLeft } from \"lucide-react\";\n\nconst options = [\n  { label: \"Grid\", icon: Grid2X2 },\n  { label: \"Board\", icon: PanelsTopLeft },\n  { label: \"List\", icon: List },\n];\n\nexport default function SegmentedControl() {\n  const [selected, setSelected] = useState(\"Grid\");\n  const buttonRefs = useRef([]);\n\n  function onKeyDown(event, index) {\n    if (event.key !== \"ArrowRight\" && event.key !== \"ArrowLeft\") return;\n    event.preventDefault();\n    const direction = event.key === \"ArrowRight\" ? 1 : -1;\n    const nextIndex = (index + direction + options.length) % options.length;\n    setSelected(options[nextIndex].label);\n    buttonRefs.current[nextIndex]?.focus();\n  }\n\n  return (\n    <section className=\"w-full max-w-lg rounded-[26px] border border-[var(--border,rgba(255,255,255,.1))] bg-[var(--surface,#0d0d10)] p-6 shadow-[0_18px_60px_rgba(0,0,0,.24)]\">\n      <p className=\"text-xs text-[var(--text-muted,#64748b)]\">View preference</p>\n      <div role=\"radiogroup\" aria-label=\"View preference\" className=\"mt-4 inline-flex rounded-2xl border border-[var(--border,rgba(255,255,255,.1))] bg-black/15 p-1.5\">\n        {options.map((item, index) => {\n          const Icon = item.icon;\n          const active = item.label === selected;\n          return (\n            <button\n              key={item.label}\n              ref={(el) => {\n                buttonRefs.current[index] = el;\n              }}\n              role=\"radio\"\n              aria-checked={active}\n              tabIndex={active ? 0 : -1}\n              type=\"button\"\n              onClick={() => setSelected(item.label)}\n              onKeyDown={(event) => onKeyDown(event, index)}\n              className={\n                \"flex items-center gap-2 rounded-xl px-3.5 py-2 text-xs font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300 \" +\n                (active ? \"bg-white text-[var(--text-on-accent,#020617)] shadow-lg\" : \"text-[var(--text-muted,#64748b)] hover:text-white\")\n              }\n            >\n              <Icon className=\"h-3.5 w-3.5\" aria-hidden=\"true\" />\n              {item.label}\n            </button>\n          );\n        })}\n      </div>\n      <div role=\"status\" aria-live=\"polite\" className=\"mt-6 rounded-2xl border border-dashed border-[var(--border,rgba(255,255,255,.1))] p-5 text-center text-xs text-[var(--text-subtle,#475569)]\">\n        {selected} view selected — segmented controls work especially well for display modes and scoped filters.\n      </div>\n    </section>\n  );\n}\n"
+    }
+  ]
+}

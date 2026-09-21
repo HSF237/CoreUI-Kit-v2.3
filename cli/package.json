@@ -1,0 +1,33 @@
+{
+  "name": "coreui-kit",
+  "version": "0.1.0",
+  "description": "CLI to copy CoreUI-Kit React components straight into your project.",
+  "type": "module",
+  "license": "MIT",
+  "author": "CoreUI-Kit contributors",
+  "homepage": "https://core-ui-kit-v2-3.vercel.app/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HSF237/CoreUI-Kit-v2.3.git",
+    "directory": "cli"
+  },
+  "bugs": {
+    "url": "https://github.com/HSF237/CoreUI-Kit-v2.3/issues"
+  },
+  "bin": {
+    "coreui-kit": "./coreui-kit.mjs"
+  },
+  "files": [
+    "coreui-kit.mjs"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "react",
+    "tailwindcss",
+    "ui",
+    "components",
+    "cli"
+  ]
+}

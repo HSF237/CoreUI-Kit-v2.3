@@ -1,0 +1,18 @@
+{
+  "$schema": "https://core-ui-kit-v2-3.vercel.app/r/schema.json",
+  "name": "loading-status-panel",
+  "type": "registry:component",
+  "title": "Loading Status Panel",
+  "category": "loaders",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "src/components/registry/loaders/LoadingStatusPanel.jsx",
+      "target": "components/coreui-kit/LoadingStatusPanel.jsx",
+      "type": "registry:component",
+      "content": "import { CheckCircle2, CircleDashed, LoaderCircle } from \"lucide-react\";\n\nconst stateLabels = {\n  done: \"Completed\",\n  active: \"In progress\",\n  waiting: \"Waiting\",\n};\n\nconst steps = [\n  { label: \"Preparing workspace\", state: \"done\" },\n  { label: \"Installing dependencies\", state: \"done\" },\n  { label: \"Building production bundle\", state: \"active\" },\n  { label: \"Deploying edge assets\", state: \"waiting\" },\n];\n\nexport default function LoadingStatusPanel() {\n  return (\n    <section className=\"w-full max-w-lg rounded-[28px] border border-[var(--border,rgba(255,255,255,.1))] bg-[var(--surface,#0d0d10)] p-6 shadow-[0_18px_60px_rgba(0,0,0,.24)]\">\n      <div className=\"flex items-center gap-3\">\n        <div className=\"flex h-11 w-11 items-center justify-center rounded-2xl bg-amber-300/10 text-amber-300\">\n          <LoaderCircle className=\"h-5 w-5 animate-spin motion-reduce:animate-none\" aria-hidden=\"true\" />\n        </div>\n        <div>\n          <h3 className=\"font-semibold text-white\">Publishing your project</h3>\n          <p className=\"mt-0.5 text-xs text-[var(--text-subtle,#475569)]\">Usually takes less than a minute.</p>\n        </div>\n      </div>\n\n      <ol className=\"mt-6 space-y-3\">\n        {steps.map((step, index) => (\n          <li\n            key={step.label}\n            className=\"flex items-center gap-3 rounded-2xl border border-[var(--border,rgba(255,255,255,.1))] bg-[var(--surface-inset,rgba(255,255,255,.025))] px-4 py-3\"\n          >\n            {step.state === \"done\" ? (\n              <CheckCircle2 className=\"h-4 w-4 text-emerald-300\" aria-hidden=\"true\" />\n            ) : step.state === \"active\" ? (\n              <LoaderCircle className=\"h-4 w-4 animate-spin motion-reduce:animate-none text-amber-300\" aria-hidden=\"true\" />\n            ) : (\n              <CircleDashed className=\"h-4 w-4 text-[var(--text-faint,#334155)]\" aria-hidden=\"true\" />\n            )}\n            <span className={\"flex-1 text-xs \" + (step.state === \"waiting\" ? \"text-[var(--text-faint,#334155)]\" : \"text-[var(--text-secondary,#cbd5e1)]\")}>\n              {step.label}\n              <span className=\"sr-only\"> — {stateLabels[step.state]}</span>\n            </span>\n            <span className=\"font-mono text-[10px] text-[var(--text-faint,#334155)]\">0{index + 1}</span>\n          </li>\n        ))}\n      </ol>\n\n      <div\n        role=\"progressbar\"\n        aria-label=\"Publish progress\"\n        aria-valuenow={68}\n        aria-valuemin={0}\n        aria-valuemax={100}\n        className=\"mt-5 h-1.5 overflow-hidden rounded-full bg-white/[0.05]\"\n      >\n        <div className=\"h-full w-[68%] rounded-full bg-gradient-to-r from-amber-300 to-orange-300\" />\n      </div>\n      <p aria-hidden=\"true\" className=\"mt-2 text-right font-mono text-[10px] text-[var(--text-faint,#334155)]\">\n        68%\n      </p>\n    </section>\n  );\n}\n"
+    }
+  ]
+}

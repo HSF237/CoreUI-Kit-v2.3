@@ -1,0 +1,18 @@
+{
+  "$schema": "https://core-ui-kit-v2-3.vercel.app/r/schema.json",
+  "name": "pricing-tier-card",
+  "type": "registry:component",
+  "title": "Pricing Tier Card",
+  "category": "interactive",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "src/components/registry/interactive/PricingTierCard.jsx",
+      "target": "components/coreui-kit/PricingTierCard.jsx",
+      "type": "registry:component",
+      "content": "import { Check, Crown, Sparkles } from \"lucide-react\";\n\nconst features = [\"Unlimited projects\", \"Advanced analytics\", \"Priority support\", \"Team permissions\", \"Custom themes\"];\n\nexport default function PricingTierCard() {\n  return (\n    <section className=\"relative w-full max-w-md overflow-hidden rounded-[30px] border border-rose-300/20 bg-[#080f1c] p-1 shadow-2xl shadow-rose-950/25\">\n      <div className=\"absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-rose-400/15 to-transparent\" />\n      <div className=\"relative rounded-[26px] border border-[var(--border,rgba(255,255,255,.1))] bg-black/10 p-5 sm:p-6\">\n        <div className=\"flex items-center justify-between\">\n          <div className=\"inline-flex items-center gap-2 rounded-full border border-rose-300/20 bg-rose-300/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-rose-200\">\n            <Crown className=\"h-3.5 w-3.5\" aria-hidden=\"true\" />\n            Pro\n          </div>\n          <Sparkles className=\"h-5 w-5 text-rose-300\" aria-hidden=\"true\" />\n        </div>\n        <h3 className=\"mt-6 text-2xl font-semibold text-white\">Built for serious shipping.</h3>\n        <p className=\"mt-2 text-sm leading-6 text-[var(--text-muted,#64748b)]\">\n          Everything a growing product team needs to move faster without compromising polish.\n        </p>\n        <p className=\"mt-6 flex items-end gap-2\">\n          <span className=\"text-5xl font-semibold tracking-[-0.06em] text-white\">$24</span>\n          <span className=\"mb-1 text-sm text-[var(--text-subtle,#475569)]\">/ month</span>\n        </p>\n        <button\n          type=\"button\"\n          className=\"mt-6 w-full rounded-2xl bg-gradient-to-r from-amber-300 to-rose-300 px-4 py-3 text-sm font-bold text-[var(--text-on-accent,#020617)] transition hover:scale-[1.01] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-300\"\n        >\n          Start building\n        </button>\n        <ul className=\"mt-6 space-y-3\">\n          {features.map((feature) => (\n            <li key={feature} className=\"flex items-center gap-3 text-sm text-[var(--text-tertiary,#94a3b8)]\">\n              <span className=\"flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-300/10 text-emerald-300\">\n                <Check className=\"h-3 w-3\" aria-hidden=\"true\" />\n              </span>\n              {feature}\n            </li>\n          ))}\n        </ul>\n      </div>\n    </section>\n  );\n}\n"
+    }
+  ]
+}
