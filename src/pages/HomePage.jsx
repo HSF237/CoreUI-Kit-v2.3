@@ -203,7 +203,7 @@ export default function HomePage() {
             </label>
           </div>
 
-          <div className="space-y-7">
+          <div className="grid gap-7 xl:grid-cols-2 xl:items-start">
             {visibleItems.map((item) => {
               const Component = item.component;
 
@@ -225,7 +225,7 @@ export default function HomePage() {
             })}
 
             {visibleItems.length === 0 && (
-              <div className="rounded-[26px] border border-dashed border-[var(--chrome-border-strong)] bg-[var(--chrome-surface)] px-6 py-20 text-center">
+              <div className="rounded-[26px] border border-dashed border-[var(--chrome-border-strong)] bg-[var(--chrome-surface)] px-6 py-20 text-center xl:col-span-2">
                 <Search className="mx-auto h-5 w-5 text-[var(--chrome-text-faint)]" />
                 <p className="mt-4 text-sm font-medium text-[var(--chrome-text-secondary)]">
                   No components found.

@@ -2,6 +2,10 @@
 
 All notable changes to this project are documented in this file. Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); this project uses [Semantic Versioning](https://semver.org/).
 
+## v0.7.1
+
+- The homepage component gallery now lays out in a 2-column grid on wide screens (`xl:` breakpoint and up) instead of stacking every component full-width in a single column. Most blocks are `max-w-md`–`max-w-2xl` internally, so the old single-column layout left a lot of dead space on desktop.
+
 ## v0.7.0
 
 - Added a real test suite: Vitest + React Testing Library + jest-axe, wired into `npm run check` and CI. 53 tests: an automated axe accessibility scan across all 38 registry components, plus behavior regression tests for the trickiest interactive blocks (modal focus trap/Escape/focus-return, tabs keyboard navigation, carousel/accordion state). The suite caught two real accessibility bugs on its first run — see Fixed below.

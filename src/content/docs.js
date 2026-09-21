@@ -152,6 +152,10 @@ export const docsPages = [
     summary: "Notable changes by version.",
     sections: [
       {
+        heading: "v0.7.1",
+        list: ["The homepage gallery now lays out in a 2-column grid on wide screens instead of a single full-width column."],
+      },
+      {
         heading: "v0.7.0",
         list: [
           "Added a real test suite (Vitest + React Testing Library + jest-axe): an automated accessibility scan across all 38 blocks plus behavior regression tests for the trickiest interactive ones, wired into CI.",

@@ -9,9 +9,12 @@ export default defineConfig({
     environment: "jsdom",
     setupFiles: ["./src/test/setup.js"],
     css: false,
-    // Spawning a fresh OS process per test file is unreliable on some
-    // machines (worker-startup timeouts); running sequentially in one
-    // process trades a bit of speed for consistent, non-flaky runs.
+    // Spawning a fresh OS process per test file is unreliable on this
+    // machine (worker-startup timeouts even with fileParallelism off,
+    // since that still spawns one fork per file, just sequentially).
+    // A single persistent thread avoids process-spawn overhead entirely.
+    pool: "threads",
+    maxWorkers: 1,
     fileParallelism: false,
     // Full axe scans over larger component trees can legitimately take
     // longer than the 5s default, especially in this environment.

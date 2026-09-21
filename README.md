@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/HSF237/CoreUI-Kit-v2.3/actions/workflows/ci.yml/badge.svg)](https://github.com/HSF237/CoreUI-Kit-v2.3/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
-[![Version](https://img.shields.io/badge/version-0.7.0-informational.svg)](./CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.7.1-informational.svg)](./CHANGELOG.md)
 
 **CoreUI-Kit is a free, open-source copy-and-paste UI registry for React and Tailwind CSS.**
 
